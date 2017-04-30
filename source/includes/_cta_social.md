@@ -54,7 +54,7 @@ position_order | integer | Position in the queue when cta is displayed.
 asset_id | integer | The identifier of the asset.
 project_id | integer | The identifier of the project.
 created_at | string | The date and time the cta was created.
-created_at | string | The date and time the cta was updated.
+updated_at | string | The date and time the cta was updated.
 left | string | Distance from the left edge to cta.
 top | string | Distance from the top edge to cta.
 width | string | Cta width.
@@ -210,13 +210,13 @@ share_image | false | string |     | Image link.
 share_description | false | string |     | Description text.
 share_link | false | string |     | Share link if share_method is "page".
 share_caption | false | string |     | Share caption.
-on_pause  | false      | string  |         | Display cta on pause.
-on_start  | false      | string  |         | Display cta on start.
-on_finish | false      | string  |         | Display cta on finish.
-fullscreen | false      | string  |         | Fullscreen.
-cuepoints  | false      | string  |         | Cuepoints timestamps.
-on_cuepoints | false      | string  |         | Display cta on cuepoints.
-smart  | false      | string  |         | Smart cta.
+on_pause  | false      | boolean  |         | Display cta on pause.
+on_start  | false      | boolean  |         | Display cta on start.
+on_finish | false      | boolean  |         | Display cta on finish.
+fullscreen | false      | boolean  |         | Fullscreen.
+cuepoints  | false      | array of arrays  |         | Cuepoints timestamps.
+on_cuepoints | false      | boolean  |         | Display cta on cuepoints.
+smart  | false      | boolean  |         | Smart cta.
 
 
 ### Returns
@@ -227,7 +227,7 @@ Returns a cta object if the call succeeded. If a parent cta id is provided and d
 ## Update a cta social
 
 ```shell
-curl http://localhost:3500/api/v1/ctas/1 \
+curl http://localhost:3500/api/v1/ctas/3 \
   -d api_key=test_key
 ```
 > Example Request Body Parameters
@@ -298,9 +298,10 @@ This endpoint updates a specific cta.
 
 Parameter  | Required  | Type    | Default | Description
 ---------  | --------- | ------- | ------- | -----------
-name           | true      | string  |         | Cta name
-position_order | true      | integer |         | Position in the queue when cta is displayed.
-options        | true      | hash    |         | Cta options.
+id | true | integer | | The identifier of the cta.
+name           | false      | string  |         | Cta name
+position_order | false      | integer |         | Position in the queue when cta is displayed.
+options        | false      | hash    |         | Cta options.
 
 Options
 
@@ -326,13 +327,13 @@ share_image | false | string |     | Image link.
 share_description | false | string |     | Description text.
 share_link | false | string |     | Share link if share_method is "page".
 share_caption | false | string |     | Share caption.
-on_pause  | false      | string  |         | Display cta on pause.
-on_start  | false      | string  |         | Display cta on start.
-on_finish | false      | string  |         | Display cta on finish.
-fullscreen | false      | string  |         | Fullscreen.
-cuepoints  | false      | string  |         | Cuepoints timestamps.
-on_cuepoints | false      | string  |         | Display cta on cuepoints.
-smart  | false      | string  |         | Smart cta.
+on_pause  | false      | boolean  |         | Display cta on pause.
+on_start  | false      | boolean  |         | Display cta on start.
+on_finish | false      | boolean  |         | Display cta on finish.
+fullscreen | false      | boolean  |         | Fullscreen.
+cuepoints  | false      | array of arrays  |         | Cuepoints timestamps.
+on_cuepoints | false      | boolean  |         | Display cta on cuepoints.
+smart  | false      | boolean  |         | Smart cta.
 
 ### Returns
 Returns the cta object if the update succeeded. Returns an error if update parameters are invalid or the cta ID does not exist.

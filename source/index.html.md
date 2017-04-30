@@ -15,6 +15,10 @@ includes:
   - cta_optin
   - cta_social
   - cta_tag
+  - cta_purchase
+  - cta_survey
+  - cta_html
+  - cta_trigger
   - errors
 
 search: true

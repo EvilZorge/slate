@@ -23,16 +23,16 @@
   "font_family": "Roboto",
   "font_size": "30px",
   "font_style": "none",
-  "form": nil,
+  "form": null,
   "fullscreen": false,
   "header_text": "header_text",
   "height": "30%",
   "left": "30%",
   "list": {
-    id: "108c878f10",
-    name: "Ecommerce Notebook"
+    "id": "108c878f10",
+    "name": "Ecommerce Notebook"
   },
-  "lists": nil,
+  "lists": null,
   "name_field": false,
   "notice_text": "We promise not to send you any spam.",
   "notification_option": "none",
@@ -43,11 +43,11 @@
   "on_pause": false,
   "on_start": true,
   "position": "inside",
-  "sequence": nil,
+  "sequence": null,
   "skip": false,
   "smart": false,
-  "tags": nil,
-  "tags_names": nil,
+  "tags": null,
+  "tags_names": null,
   "text": "text",
   "text_color": "255,255,255",
   "text_opacity": "0.6",
@@ -65,7 +65,7 @@ position_order | integer | Position in the queue when cta is displayed.
 asset_id | integer | The identifier of the asset.
 project_id | integer | The identifier of the project.
 created_at | string | The date and time the cta was created.
-created_at | string | The date and time the cta was updated.
+updated_at | string | The date and time the cta was updated.
 integration_id | integer | The identifier of the integration.
 left | string | Distance from the left edge to cta.
 top | string | Distance from the top edge to cta.
@@ -120,6 +120,7 @@ curl http://localhost:3500/api/v1/ctas \
   "type": "CtaOptin",
   "position_order": 2,
   "asset_id": 1,
+  "integration_id": 2,
   "options": {
     "on_start": true,
     "position": "inside",
@@ -169,16 +170,16 @@ curl http://localhost:3500/api/v1/ctas \
   "font_family": "Roboto",
   "font_size": "30px",
   "font_style": "none",
-  "form": nil,
+  "form": null,
   "fullscreen": false,
   "header_text": "header_text",
   "height": "30%",
   "left": "30%",
   "list": {
-    id: "108c878f10",
-    name: "Ecommerce Notebook"
+    "id": "108c878f10",
+    "name": "Ecommerce Notebook"
   },
-  "lists": nil,
+  "lists": null,
   "name_field": false,
   "notice_text": "We promise not to send you any spam.",
   "notification_option": "none",
@@ -189,11 +190,11 @@ curl http://localhost:3500/api/v1/ctas \
   "on_pause": false,
   "on_start": true,
   "position": "inside",
-  "sequence": nil,
+  "sequence": null,
   "skip": false,
   "smart": false,
-  "tags": nil,
-  "tags_names": nil,
+  "tags": null,
+  "tags_names": null,
   "text": "text",
   "text_color": "255,255,255",
   "text_opacity": "0.6",
@@ -219,13 +220,13 @@ name           | true      | string  |         | Cta name
 type           | true      | string  |         | Cta type. Must be "CtaOptin".
 position_order | true      | integer |         | Position in the queue when cta is displayed.
 asset_id       | true      | integer |         | The identifier of the asset.
+integration_id | true      | integer  |         | The identifier of the integration.
 options        | true      | hash    |         | Cta options.
 
 Options
 
 Parameter  | Required  | Type    | Default | Description
 ---------  | --------- | ------- | ------- | -----------
-integration_id | true      | integer  |         | The identifier of the integration.
 position   | true      | string  |         | Position inside or outside the player. Must be "inside" or "outside"
 left | true      | string  |         | Distance from the left edge to cta. Must be in range (0..100). Example: "10%", "25%".
 top | true      | string  |         | Distance from the top edge to cta. Must be in range (0..100). Example: "10%", "25%".
@@ -253,13 +254,13 @@ tags_names | false | array of strings |     | Tags names integration field.
 form | false | hash |     | Form integration field.
 sequence | false | hash |     | Sequence integration field.
 tags | false | array of hashes|     | Tags integration field.
-on_pause  | false      | string  |         | Display cta on pause.
-on_start  | false      | string  |         | Display cta on start.
-on_finish | false      | string  |         | Display cta on finish.
-fullscreen | false      | string  |         | Fullscreen.
-cuepoints  | false      | string  |         | Cuepoints timestamps.
-on_cuepoints | false      | string  |         | Display cta on cuepoints.
-smart  | false      | string  |         | Smart cta.
+on_pause  | false      | boolean  |         | Display cta on pause.
+on_start  | false      | boolean  |         | Display cta on start.
+on_finish | false      | boolean  |         | Display cta on finish.
+fullscreen | false      | boolean  |         | Fullscreen.
+cuepoints  | false      | array of arrays  |         | Cuepoints timestamps.
+on_cuepoints | false      | boolean  |         | Display cta on cuepoints.
+smart  | false      | boolean  |         | Smart cta.
 
 ### Returns
 Returns a cta object if the call succeeded. If a parent cta id is provided and does not exist or available, the call will return an error.
@@ -269,7 +270,7 @@ Returns a cta object if the call succeeded. If a parent cta id is provided and d
 ## Update a cta optin
 
 ```shell
-curl http://localhost:3500/api/v1/ctas/1 \
+curl http://localhost:3500/api/v1/ctas/2 \
   -d api_key=test_key
 ```
 > Example Request Body Parameters
@@ -306,16 +307,16 @@ curl http://localhost:3500/api/v1/ctas/1 \
   "font_family": "Roboto",
   "font_size": "30px",
   "font_style": "none",
-  "form": nil,
+  "form": null,
   "fullscreen": false,
   "header_text": "header_text",
   "height": "30%",
   "left": "99%",
   "list": {
-    id: "108c878f10",
-    name: "Ecommerce Notebook"
+    "id": "108c878f10",
+    "name": "Ecommerce Notebook"
   },
-  "lists": nil,
+  "lists": null,
   "name_field": false,
   "notice_text": "We promise not to send you any spam.",
   "notification_option": "none",
@@ -326,11 +327,11 @@ curl http://localhost:3500/api/v1/ctas/1 \
   "on_pause": false,
   "on_start": true,
   "position": "outside",
-  "sequence": nil,
+  "sequence": null,
   "skip": false,
   "smart": false,
-  "tags": nil,
-  "tags_names": nil,
+  "tags": null,
+  "tags_names": null,
   "text": "text",
   "text_color": "255,255,255",
   "text_opacity": "0.6",
@@ -355,13 +356,13 @@ Parameter  | Required  | Type    | Default | Description
 id         | true      | integer |         | The identifier of the cta to be updated.
 name           | false      | string  |         | Cta name
 position_order | false      | integer |         | Position in the queue when cta is displayed.
+integration_id | false      | integer  |         | The identifier of the integration.
 options        | false      | hash    |         | Cta options.
 
 Options
 
 Parameter  | Required  | Type    | Default | Description
 ---------  | --------- | ------- | ------- | -----------
-integration_id | false      | integer  |         | The identifier of the integration.
 position   | false      | string  |         | Position inside or outside the player. Must be "inside" or "outside"
 left  | false      | string  |         | Distance from the left edge to cta. Must be in range (0..100). Example: "10%", "25%".
 top | false      | string  |         | Distance from the top edge to cta. Must be in range (0..100). Example: "10%", "25%".
@@ -389,13 +390,13 @@ tags_names | false | array of strings |     | Tags names integration field.
 form | false | hash |     | Form integration field.
 sequence | false | hash |     | Sequence integration field.
 tags | false | array of hashes|     | Tags integration field.
-on_pause  | false      | string  |         | Display cta on pause.
-on_start  | false      | string  |         | Display cta on start.
-on_finish | false      | string  |         | Display cta on finish.
-fullscreen | false      | string  |         | Fullscreen.
-cuepoints  | false      | string  |         | Cuepoints timestamps.
-on_cuepoints | false      | string  |         | Display cta on cuepoints.
-smart  | false      | string  |         | Smart cta.
+on_pause  | false      | boolean  |         | Display cta on pause.
+on_start  | false      | boolean  |         | Display cta on start.
+on_finish | false      | boolean  |         | Display cta on finish.
+fullscreen | false      | boolean  |         | Fullscreen.
+cuepoints  | false      | array of arrays  |         | Cuepoints timestamps.
+on_cuepoints | false      | boolean  |         | Display cta on cuepoints.
+smart  | false      | boolean  |         | Smart cta.
 
 ### Returns
 Returns the cta object if the update succeeded. Returns an error if update parameters are invalid or the cta ID does not exist.
