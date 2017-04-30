@@ -10,6 +10,15 @@ toc_footers:
 includes:
   - folders
   - integrations
+  - ctas
+  - cta_button
+  - cta_optin
+  - cta_social
+  - cta_tag
+  - cta_purchase
+  - cta_survey
+  - cta_html
+  - cta_trigger
   - errors
 
 search: true

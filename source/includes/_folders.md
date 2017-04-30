@@ -196,7 +196,7 @@ This endpoint updates a specific folder.
 
 Parameter  | Required  | Type    | Default | Description
 ---------  | --------- | ------- | ------- | -----------
-id         | true      | integer |         | The identifier of the folder to be retrived.
+id         | true      | integer |         | The identifier of the folder to be updated.
 name       | true      | string  |         | Folder name
 parent_id  | false     | integer | nil     | The identifier of the parent folder.
 
@@ -228,7 +228,7 @@ This endpoint deletes a specific folder.
 
 Parameter  | Required  | Type    | Default | Description
 ---------  | --------- | ------- | ------- | -----------
-id         | true      | integer |         | The identifier of the folder to be retrived.
+id         | true      | integer |         | The identifier of the folder to be deleted.
 
 ### Returns
 Returns 204 NO CONTENT HTTP status code on success. If the folder ID does not exist, this call returns an error.
