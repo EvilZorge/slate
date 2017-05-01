@@ -15,8 +15,7 @@
   "provider": "stripe",
   "created_at": "2017-04-25T22:00:47.047560",
   "updated_at": "2017-04-25T22:00:47.047560",
-  "publishable_key": "publishable_key",
-  "secret_key": "secret_key"
+  "publishable_key": "publishable_key
 }
 ```
 
@@ -40,8 +39,8 @@ Parameter | Type | Description
 --------- | ---- | -----------
 api_endpoint | string | Api endpoint.
 actid | string | Act id.
-api_key | string | Api key(encrypted).
-event_key | string | Event key(encrypted).
+api_key | string | Api key(secret key).
+event_key | string | Event key(secret key).
 
 ### Integration Amazon
 
@@ -51,7 +50,7 @@ bucket | string | Bucket .
 access_key_id | string | Access key id.
 cloudfront | string | Cloudfront.
 ready | string | Bucket status.
-secret_access_key | string | Secret access key(encrypted).
+secret_access_key | string | Secret access key(secret key).
 
 ### Integration Aweber
 
@@ -59,15 +58,15 @@ Parameter | Type | Description
 --------- | ---- | -----------
 access_token | string | Access token.
 consumer_key | string | Consumer key.
-access_token_secret | string | Secret access token(encrypted).
-consumer_secret | string | Consumer secret(encrypted).
+access_token_secret | string | Secret access token(secret key).
+consumer_secret | string | Consumer secret(secret key).
 
 ### Integration Convertkit
 
 Parameter | Type | Description
 --------- | ---- | -----------
 api_key | string | Api key.
-secret_key | string | Secret key(encrypted).
+secret_key | string | Secret key(secret key).
 
 ### Integration Disqus
 
@@ -80,13 +79,13 @@ forum_shortname | string | Forum shortname.
 Parameter | Type | Description
 --------- | ---- | -----------
 api_account_id | string | Api account id.
-access_token | string | Access token(encrypted).
+access_token | string | Access token(secret key).
 
 ### Integration Getresponse
 
 Parameter | Type | Description
 --------- | ---- | -----------
-secret_api_key | string | Secret api key(encrypted).
+secret_api_key | string | Secret api key(secret key).
 
 ### Integration Google Analytics
 
@@ -94,8 +93,8 @@ Parameter | Type | Description
 --------- | ---- | -----------
 api_account_id | string | Api account id.
 web_property_id | string | Web property id.
-access_token | string | Access token(encrypted).
-refresh_token | string | Refresh token(encrypted).
+access_token | string | Access token(secret key).
+refresh_token | string | Refresh token(secret key).
 
 ### Integration Html
 
@@ -110,54 +109,54 @@ url | string | Url inside html code.
 Parameter | Type | Description
 --------- | ---- | -----------
 app_name | string | App name.
-api_key | string | Api key(encrypted).
+api_key | string | Api key(secret key).
 
 ### Integration Intercom
 
 Parameter | Type | Description
 --------- | ---- | -----------
-access_token | string | Access token(encrypted).
+access_token | string | Access token(secret key).
 
 ### Integration Mailchimp
 
 Parameter | Type | Description
 --------- | ---- | -----------
-api_key | string | Api key(encrypted).
+api_key | string | Api key(secret key).
 
 ### Integration Ontraport
 
 Parameter | Type | Description
 --------- | ---- | -----------
 app_id | string |App id.
-api_key | string | Api key(encrypted).
+api_key | string | Api key(secret key).
 
 ### Integration Paypal
 
 Parameter | Type | Description
 --------- | ---- | -----------
 client_id | string | Client id.
-client_secret | string | Client secret(encrypted).
+client_secret | string | Client secret(secret key).
 
 ### Integration Sendreach
 
 Parameter | Type | Description
 --------- | ---- | -----------
 api_key | string | Api key.
-secret_api_key | string | Secret api key(encrypted).
+secret_api_key | string | Secret api key(secret key).
 
 ### Integration Stripe
 
 Parameter | Type | Description
 --------- | ---- | -----------
 publishable_key | string | Publishable key.
-secret_key | string | Secret key(encrypted).
+secret_key | string | Secret key(secret key).
 
 ### Integration Wishlist
 
 Parameter | Type | Description
 --------- | ---- | -----------
 endpoint | string | Endpoint.
-api_key | string | Api key(encrypted).
+api_key | string | Api key(secret key).
 
 
 <!-- /////////////////////////// INTEGRATIONS /////////////////////////// -->
@@ -183,8 +182,7 @@ curl http://localhost:3500/api/v1/integrations \
     "provider": "stripe",
     "created_at": "2017-04-25T22:00:47.047560",
     "updated_at": "2017-04-25T22:00:47.047560",
-    "publishable_key": "publishable_key",
-    "secret_key": "secret_key"
+    "publishable_key": "publishable_key"
   },
   {
     "id": 2,
@@ -195,8 +193,7 @@ curl http://localhost:3500/api/v1/integrations \
     "integration_type": "email",
     "provider": "mailchimp",
     "created_at": "2017-04-26T19:22:20.387166",
-    "updated_at": "2017-04-26T19:22:20.387166",
-    "api_key": "api_key"
+    "updated_at": "2017-04-26T19:22:20.387166"
   }
 ]
 ```
@@ -208,7 +205,7 @@ This endpoint retrieves all integrations.
 `GET http://localhost:3500/api/v1/integrations`
 
 ### Returns
-Returns a list of your integrations if the call succeeded.
+Returns a list of your integrations without secret keys if the call succeeded.
 
 <!-- /////////////////////////// SPECIFIC INTEGRATION /////////////////////////// -->
 
@@ -232,12 +229,10 @@ curl http://localhost:3500/api/v1/integrations/1 \
   "provider": "stripe",
   "created_at": "2017-04-25T22:00:47.047560",
   "updated_at": "2017-04-25T22:00:47.047560",
-  "publishable_key": "publishable_key",
-  "secret_key": "secret_key"
-}
+  "publishable_key": "publishable_key"}
 ```
 
-This endpoint retrieves a specific integration.
+This endpoint retrieves a specific integration without secret keys.
 
 ### HTTP Request
 
