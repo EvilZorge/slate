@@ -141,7 +141,7 @@ curl http://localhost:3500/api/v1/ctas \
     "survey_questions": [
       {
         "text": "question",
-        survey_options: [
+        "survey_options": [
           {
             "text": "answer"
           },

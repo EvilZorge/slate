@@ -18,7 +18,7 @@
     {
       "id": 1,
       "action": "percentage_viewed",
-      "cta_purchase_id": nil,
+      "cta_purchase_id": null,
       "parameter": "equals",
       "percentage": "1"
     }
@@ -27,23 +27,23 @@
     {
       "id": 2,
       "action": "add_list",
-      "event_name": nil,
-      "forms": nil,
+      "event_name": null,
+      "forms": null,
       "integration_id": 2,
       "integration_provider": "aweber",
-      "js_code": nil,
+      "js_code": null,
       "list": [
         {
           "id": 24,
           "name": "test_name"
         }
       ],
-      "lists": nil,
+      "lists": null,
       "main_action": "automation",
-      "sequences": nil,
-      "tags": nil,
-      "tags_list": nil,
-      "tags_names": nil
+      "sequences": null,
+      "tags": null,
+      "tags_list": null,
+      "tags_names": null
     }
   ]
 }
@@ -148,7 +148,7 @@ curl http://localhost:3500/api/v1/ctas \
     {
       "id": 1,
       "action": "percentage_viewed",
-      "cta_purchase_id": nil,
+      "cta_purchase_id": null,
       "parameter": "equals",
       "percentage": "1"
     }
@@ -157,23 +157,23 @@ curl http://localhost:3500/api/v1/ctas \
     {
       "id": 2,
       "action": "add_list",
-      "event_name": nil,
-      "forms": nil,
+      "event_name": null,
+      "forms": null,
       "integration_id": 2,
       "integration_provider": "aweber",
-      "js_code": nil,
+      "js_code": null,
       "list": [
         {
           "id": 24,
           "name": "test_name"
         }
       ],
-      "lists": nil,
+      "lists": null,
       "main_action": "automation",
-      "sequences": nil,
-      "tags": nil,
-      "tags_list": nil,
-      "tags_names": nil
+      "sequences": null,
+      "tags": null,
+      "tags_list": null,
+      "tags_names": null
     }
   ]
 }
@@ -270,7 +270,7 @@ curl http://localhost:3500/api/v1/ctas/8 \
     {
       "id": 1,
       "action": "percentage_viewed",
-      "cta_purchase_id": nil,
+      "cta_purchase_id": null,
       "parameter": "equals",
       "percentage": "1"
     }
@@ -279,23 +279,23 @@ curl http://localhost:3500/api/v1/ctas/8 \
     {
       "id": 2,
       "action": "add_list",
-      "event_name": nil,
-      "forms": nil,
+      "event_name": null,
+      "forms": null,
       "integration_id": 2,
       "integration_provider": "aweber",
-      "js_code": nil,
+      "js_code": null,
       "list": [
         {
           "id": 24,
           "name": "test_name"
         }
       ],
-      "lists": nil,
+      "lists": null,
       "main_action": "automation",
-      "sequences": nil,
-      "tags": nil,
-      "tags_list": nil,
-      "tags_names": nil
+      "sequences": null,
+      "tags": null,
+      "tags_list": null,
+      "tags_names": null
     }
   ]
 }

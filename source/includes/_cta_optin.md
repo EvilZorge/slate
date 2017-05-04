@@ -142,7 +142,7 @@ curl http://localhost:3500/api/v1/ctas \
     "notification_text": "notification_text",
     "notification_option": "none",
     "notification_url": "http://google.com",
-    notice_text: "We promise not to send you any spam.",
+    "notice_text": "We promise not to send you any spam.",
     "name_field": false,
     "list": {id: "108c878f10", name: "Ecommerce Notebook"}
   }
