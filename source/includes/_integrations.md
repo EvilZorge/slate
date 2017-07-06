@@ -6,16 +6,18 @@
 
 ```json
 {
-  "id": 1,
-  "title": "integration-1",
-  "type": "IntegrationStripe",
-  "account_id": 2,
-  "use_cloudfront": false,
-  "integration_type": "payment",
-  "provider": "stripe",
-  "created_at": "2017-04-25T22:00:47.047560",
-  "updated_at": "2017-04-25T22:00:47.047560",
-  "publishable_key": "publishable_key
+  "integration": {
+    "id": 1,
+    "title": "integration-1",
+    "type": "IntegrationStripe",
+    "account_id": 2,
+    "use_cloudfront": false,
+    "integration_type": "payment",
+    "provider": "stripe",
+    "created_at": "2017-04-25T22:00:47.047560",
+    "updated_at": "2017-04-25T22:00:47.047560",
+    "publishable_key": "publishable_key"
+  }
 }
 ```
 
@@ -171,31 +173,33 @@ curl http://localhost:3500/api/v1/integrations \
 > Example Response
 
 ```json
-[
-  {
-    "id": 1,
-    "title": "integration-1",
-    "type": "IntegrationStripe",
-    "account_id": 2,
-    "use_cloudfront": false,
-    "integration_type": "payment",
-    "provider": "stripe",
-    "created_at": "2017-04-25T22:00:47.047560",
-    "updated_at": "2017-04-25T22:00:47.047560",
-    "publishable_key": "publishable_key"
-  },
-  {
-    "id": 2,
-    "title": "integration-2",
-    "type": "IntegrationMailchimp",
-    "account_id": 2,
-    "use_cloudfront": false,
-    "integration_type": "email",
-    "provider": "mailchimp",
-    "created_at": "2017-04-26T19:22:20.387166",
-    "updated_at": "2017-04-26T19:22:20.387166"
-  }
-]
+{
+  "integrations": [
+    {
+      "id": 1,
+      "title": "integration-1",
+      "type": "IntegrationStripe",
+      "account_id": 2,
+      "use_cloudfront": false,
+      "integration_type": "payment",
+      "provider": "stripe",
+      "created_at": "2017-04-25T22:00:47.047560",
+      "updated_at": "2017-04-25T22:00:47.047560",
+      "publishable_key": "publishable_key"
+    },
+    {
+      "id": 2,
+      "title": "integration-2",
+      "type": "IntegrationMailchimp",
+      "account_id": 2,
+      "use_cloudfront": false,
+      "integration_type": "email",
+      "provider": "mailchimp",
+      "created_at": "2017-04-26T19:22:20.387166",
+      "updated_at": "2017-04-26T19:22:20.387166"
+    }
+  ]
+}
 ```
 
 This endpoint retrieves all integrations.
@@ -220,16 +224,19 @@ curl http://localhost:3500/api/v1/integrations/1 \
 
 ```json
 {
-  "id": 1,
-  "title": "integration-1",
-  "type": "IntegrationStripe",
-  "account_id": 2,
-  "use_cloudfront": false,
-  "integration_type": "payment",
-  "provider": "stripe",
-  "created_at": "2017-04-25T22:00:47.047560",
-  "updated_at": "2017-04-25T22:00:47.047560",
-  "publishable_key": "publishable_key"}
+  "integration": {
+    "id": 1,
+    "title": "integration-1",
+    "type": "IntegrationStripe",
+    "account_id": 2,
+    "use_cloudfront": false,
+    "integration_type": "payment",
+    "provider": "stripe",
+    "created_at": "2017-04-25T22:00:47.047560",
+    "updated_at": "2017-04-25T22:00:47.047560",
+    "publishable_key": "publishable_key"
+  }
+}
 ```
 
 This endpoint retrieves a specific integration without secret keys.

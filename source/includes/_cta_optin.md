@@ -6,53 +6,48 @@
 
 ```json
 {
-  "id": 2,
-  "name": "cta-2",
-  "type": "CtaOptin",
-  "position_order": 2,
-  "asset_id": 1,
-  "project_id": 1,
-  "created_at": "2017-04-25T22:00:47.046700",
-  "updated_at": "2017-04-25T22:00:47.046700",
-  "integration_id": 2
-  "background_color": "255,255,255",
-  "background_opacity": "0.6",
-  "button_background_color": "255,255,255,255",
-  "button_background_opacity": "0.5",
-  "cuepoints": [],
-  "font_family": "Roboto",
-  "font_size": "30px",
-  "font_style": "none",
-  "form": null,
-  "fullscreen": false,
-  "header_text": "header_text",
-  "height": "30%",
-  "left": "30%",
-  "list": {
-    "id": "108c878f10",
-    "name": "Ecommerce Notebook"
-  },
-  "lists": null,
-  "name_field": false,
-  "notice_text": "We promise not to send you any spam.",
-  "notification_option": "none",
-  "notification_text": "notification_text",
-  "notification_url": "http://google.com",
-  "on_cuepoints": false,
-  "on_finish": false,
-  "on_pause": false,
-  "on_start": true,
-  "position": "inside",
-  "sequence": null,
-  "skip": false,
-  "smart": false,
-  "tags": null,
-  "tags_names": null,
-  "text": "text",
-  "text_color": "255,255,255",
-  "text_opacity": "0.6",
-  "top": "30%",
-  "width": "30%"
+  "cta": {
+    "font_size": "24px",
+    "button_background_opacity": "1",
+    "tags": null,
+    "on_finish": false,
+    "on_pause": false,
+    "on_start": true,
+    "position": "inside",
+    "form": null,
+    "created_at": "2017-06-30T22:33:28.596150",
+    "id": 1,
+    "updated_at": "2017-06-30T22:33:28.596157",
+    "background_opacity": "0.8",
+    "name_field": false,
+    "tags_names": null,
+    "integration_id": 42,
+    "sequence": null,
+    "text_color": "255,255,255",
+    "position_order": 6,
+    "asset_id": 1,
+    "smart": false,
+    "lists": null,
+    "notification_option": "none",
+    "header_text": "header_text",
+    "notice_text": "We promise not to send you any spam.",
+    "project_id": 278,
+    "cuepoints": [],
+    "type": "CtaOptin",
+    "skip": true,
+    "text_opacity": "1",
+    "name": "cta-2",
+    "notification_text": "notification_text",
+    "button_background_color": "36,178,99",
+    "text": "Play Video",
+    "background_color": "0,0,0",
+    "notification_url": null,
+    "list": {
+      "name": "destin_owners",
+      "id": "id"
+    },
+    "on_cuepoints": false
+  }
 }
 ```
 
@@ -67,10 +62,6 @@ project_id | integer | The identifier of the project.
 created_at | string | The date and time the cta was created.
 updated_at | string | The date and time the cta was updated.
 integration_id | integer | The identifier of the integration.
-left | string | Distance from the left edge to cta.
-top | string | Distance from the top edge to cta.
-width | string | Cta width.
-height | string | Cta height.
 position | string | Position inside or outside the player.
 cuepoints | array of arrays | Cuepoints timestamps.
 skip | boolean | Opportunity to skip cta.
@@ -79,9 +70,6 @@ on_pause | boolean | Display cta on pause.
 on_start | boolean | Display cta on start.
 on_finish | boolean | Display cta on finish.
 on_cuepoints | boolean | Display cta on cuepoints.
-fullscreen | boolean | Fullscreen.
-font_family | string | Text font family.
-font_style | string | Text font style.
 font_size | string | Text font size.
 text_color | string | Text color.
 text_opacity | string | Text opacity.
@@ -116,35 +104,18 @@ curl http://localhost:3500/api/v1/ctas \
 
 ```json
 {
-  "name": "cta-2",
-  "type": "CtaOptin",
-  "position_order": 2,
-  "asset_id": 1,
-  "integration_id": 2,
-  "options": {
+  "cta": {
+    "name": "cta-2",
+    "type": "CtaOptin",
+    "asset_id": 1,
+    "integration_id": 42,
     "on_start": true,
-    "position": "inside",
-    "left": "30%",
-    "top": "30%",
-    "width": "30%",
-    "height": "30%",
-    "text": "text",
-    "font_family": "Roboto",
-    "font_style": "none",
-    "font_size": "30px",
-    "text_color": "255,255,255",
-    "text_opacity": "0.6",
-    "background_color": "255,255,255",
-    "background_opacity": "0.6",
-    "button_background_color": "255,255,255,255",
-    "button_background_opacity": "0.5",
     "header_text": "header_text",
     "notification_text": "notification_text",
-    "notification_option": "none",
-    "notification_url": "http://google.com",
-    "notice_text": "We promise not to send you any spam.",
-    "name_field": false,
-    "list": {id: "108c878f10", name: "Ecommerce Notebook"}
+    "list": {
+      "id": "id",
+      "name": "destin_owners"
+    }
   }
 }
 ```
@@ -153,53 +124,48 @@ curl http://localhost:3500/api/v1/ctas \
 
 ```json
 {
-  "id": 2,
-  "name": "cta-2",
-  "type": "CtaOptin",
-  "position_order": 2,
-  "asset_id": 1,
-  "project_id": 1,
-  "created_at": "2017-04-25T22:00:47.046700",
-  "updated_at": "2017-04-25T22:00:47.046700",
-  "integration_id": 2
-  "background_color": "255,255,255",
-  "background_opacity": "0.6",
-  "button_background_color": "255,255,255,255",
-  "button_background_opacity": "0.5",
-  "cuepoints": [],
-  "font_family": "Roboto",
-  "font_size": "30px",
-  "font_style": "none",
-  "form": null,
-  "fullscreen": false,
-  "header_text": "header_text",
-  "height": "30%",
-  "left": "30%",
-  "list": {
-    "id": "108c878f10",
-    "name": "Ecommerce Notebook"
-  },
-  "lists": null,
-  "name_field": false,
-  "notice_text": "We promise not to send you any spam.",
-  "notification_option": "none",
-  "notification_text": "notification_text",
-  "notification_url": "http://google.com",
-  "on_cuepoints": false,
-  "on_finish": false,
-  "on_pause": false,
-  "on_start": true,
-  "position": "inside",
-  "sequence": null,
-  "skip": false,
-  "smart": false,
-  "tags": null,
-  "tags_names": null,
-  "text": "text",
-  "text_color": "255,255,255",
-  "text_opacity": "0.6",
-  "top": "30%",
-  "width": "30%"
+  "cta": {
+    "font_size": "24px",
+    "button_background_opacity": "1",
+    "tags": null,
+    "on_finish": false,
+    "on_pause": false,
+    "on_start": true,
+    "position": "inside",
+    "form": null,
+    "created_at": "2017-06-30T22:33:28.596150",
+    "id": 1,
+    "updated_at": "2017-06-30T22:33:28.596157",
+    "background_opacity": "0.8",
+    "name_field": false,
+    "tags_names": null,
+    "integration_id": 42,
+    "sequence": null,
+    "text_color": "255,255,255",
+    "position_order": 6,
+    "asset_id": 1,
+    "smart": false,
+    "lists": null,
+    "notification_option": "none",
+    "header_text": "header_text",
+    "notice_text": "We promise not to send you any spam.",
+    "project_id": 1,
+    "cuepoints": [],
+    "type": "CtaOptin",
+    "skip": true,
+    "text_opacity": "1",
+    "name": "cta-2",
+    "notification_text": "notification_text",
+    "button_background_color": "36,178,99",
+    "text": "Play Video",
+    "background_color": "0,0,0",
+    "notification_url": null,
+    "list": {
+      "name": "destin_owners",
+      "id": "id"
+    },
+    "on_cuepoints": false
+  }
 }
 ```
 
@@ -218,70 +184,56 @@ Parameter  | Required  | Type    | Default | Description
 ---------  | --------- | ------- | ------- | -----------
 name           | true      | string  |         | Cta name
 type           | true      | string  |         | Cta type. Must be "CtaOptin".
-position_order | true      | integer |         | Position in the queue when cta is displayed.
 asset_id       | true      | integer |         | The identifier of the asset.
 integration_id | true      | integer  |         | The identifier of the integration.
-options        | true      | hash    |         | Cta options.
-
-Options
-
-Parameter  | Required  | Type    | Default | Description
----------  | --------- | ------- | ------- | -----------
-position   | true      | string  |         | Position inside or outside the player. Must be "inside" or "outside"
-left | true      | string  |         | Distance from the left edge to cta. Must be in range (0..100). Example: "10%", "25%".
-top | true      | string  |         | Distance from the top edge to cta. Must be in range (0..100). Example: "10%", "25%".
-width  | true      | string  |         | Cta width. Must be in range (0..100). Example: "10%", "25%".
-height | true      | string  |         | Cta height. Must be in range (0..100). Example: "10%", "25%".
-font_family | true      | string  |         | Text font family. Example: Roboto, Times New Roman.
-font_style | true      | string  |         | Text font width. Example: none, 300, 400.
-font_size | true      | string  |         | Text font size. Must end with "px". Example: "30px".
-text_color  | true      | string  |         | Text color. Must be in rgb format. Example: "100, 156, 144".
-text_opacity | true      | string  |         | Text opacity. Must be in range (0.0..1.0). Example: "0.5".
-background_color | true      | string  |         | Background color. Must be in rgb format. Example: "100, 156, 144".
-background_opacity | true      | string  |         | Background opacity. Must be in range (0.0..1.0). Example: "0.5".
-button_background_color | true      | string  |         | Button background color. Must be in rgb format. Example: "100, 156, 144".
-button_background_opacity | true      | string  |         | Button background opacity. Must be in range (0.0..1.0). Example: "0.5".
-text | false      | string  |         | Optin text.
-header_text  | false      | string  |         | Header text.
-notice_text | false      | string  |         | Notice text.
-notification_text | false | string |     | Notification text. Notification option must be "custom".
+position   | false      | string  |  inside   | Position inside or outside the player. Must be "inside" or "outside"
+font_size | false  | string  |  24px | Text font size. Must end with "px". Example: "30px".
+text_color  | false  | string  |  255,255,255   | Text color. Must be in rgb format. Example: "100, 156, 144".
+text_opacity | false      | string  |   1  | Text opacity. Must be in range (0.0..1.0). Example: "0.5".
+background_color | false  | string  |  0,0,0 | Background color. Must be in rgb format. Example: "100, 156, 144".
+background_opacity | false  | string  |   0.8   | Background opacity. Must be in range (0.0..1.0). Example: "0.5".
+button_background_color | false   | string  |  36,178,99   | Button background color. Must be in rgb format. Example: "100, 156, 144".
+button_background_opacity | false      | string  |  1  | Button background opacity. Must be in range (0.0..1.0). Example: "0.5".
+text | false  | string  |   Play Video    | Optin text.
+header_text  | false  | string  |  Enter your email address to play the video  | Header text.
+notice_text | false  | string  |  We promise not to send you any spam.  | Notice text.
+notification_text | false | string |  Thank you for submitting | Notification text. Notification option must be "custom".
 notification_url | false | string |     | Notification url. Notification option must be "url".
-notification_option | false | string |     | Notification option. Must be "custom", "url" or "".
-name_field | false | boolean |     | Add fields for first and last names.
+notification_option | false | string | none | Notification option. Must be "custom", "url" or "none".
+name_field | false | boolean |  false  | Add fields for first and last names.
 list | false | hash |     | List integration field.
 lists | false | array of hashes |     | Lists integration field.
 tags_names | false | array of strings |     | Tags names integration field.
 form | false | hash |     | Form integration field.
 sequence | false | hash |     | Sequence integration field.
 tags | false | array of hashes|     | Tags integration field.
-on_pause  | false      | boolean  |         | Display cta on pause.
-on_start  | false      | boolean  |         | Display cta on start.
-on_finish | false      | boolean  |         | Display cta on finish.
-fullscreen | false      | boolean  |         | Fullscreen.
-cuepoints  | false      | array of arrays  |         | Cuepoints timestamps.
-on_cuepoints | false      | boolean  |         | Display cta on cuepoints.
-smart  | false      | boolean  |         | Smart cta.
+on_pause  | false      | boolean  |  false   | Display cta on pause.
+on_start  | false      | boolean  |  false   | Display cta on start.
+on_finish | false      | boolean  |  false | Display cta on finish.
+on_cuepoints | false      | boolean  |  false | Display cta on cuepoints.
+cuepoints  | false      | array of arrays  |  []   | Cuepoints timestamps.
+smart  | false      | boolean  |  false | Smart cta.
+skip  | false      | boolean  | true | Opportunity to skip cta.
 
 ### Returns
-Returns a cta object if the call succeeded. If a parent cta id is provided and does not exist or available, the call will return an error.
+Returns a cta object if the call succeeded. If a cta id is provided and does not exist or available, the call will return an error.
 
 <!-- /////////////////////////// UPDATE CTA /////////////////////////// -->
 
 ## Update a cta optin
 
 ```shell
-curl http://localhost:3500/api/v1/ctas/2 \
+curl http://localhost:3500/api/v1/ctas/1 \
   -d api_key=test_key
 ```
 > Example Request Body Parameters
 
 ```json
 {
-  "name": "new name",
-  "options": {
+  "cta": {
+    "name": "new name",
     "position": "outside",
-    "left": "99%",
-    "width": "50%"
+    "notice_text": "Notice text"
   }
 }
 ```
@@ -290,53 +242,48 @@ curl http://localhost:3500/api/v1/ctas/2 \
 
 ```json
 {
-  "id": 2,
-  "name": "new name",
-  "type": "CtaOptin",
-  "position_order": 2,
-  "asset_id": 1,
-  "project_id": 1,
-  "created_at": "2017-04-25T22:00:47.046700",
-  "updated_at": "2017-04-25T22:00:47.046700",
-  "integration_id": 2
-  "background_color": "255,255,255",
-  "background_opacity": "0.6",
-  "button_background_color": "255,255,255,255",
-  "button_background_opacity": "0.5",
-  "cuepoints": [],
-  "font_family": "Roboto",
-  "font_size": "30px",
-  "font_style": "none",
-  "form": null,
-  "fullscreen": false,
-  "header_text": "header_text",
-  "height": "30%",
-  "left": "99%",
-  "list": {
-    "id": "108c878f10",
-    "name": "Ecommerce Notebook"
-  },
-  "lists": null,
-  "name_field": false,
-  "notice_text": "We promise not to send you any spam.",
-  "notification_option": "none",
-  "notification_text": "notification_text",
-  "notification_url": "http://google.com",
-  "on_cuepoints": false,
-  "on_finish": false,
-  "on_pause": false,
-  "on_start": true,
-  "position": "outside",
-  "sequence": null,
-  "skip": false,
-  "smart": false,
-  "tags": null,
-  "tags_names": null,
-  "text": "text",
-  "text_color": "255,255,255",
-  "text_opacity": "0.6",
-  "top": "30%",
-  "width": "50%"
+  "cta": {
+    "font_size": "24px",
+    "button_background_opacity": "1",
+    "tags": null,
+    "on_finish": false,
+    "on_pause": false,
+    "on_start": true,
+    "position": "outside",
+    "form": null,
+    "created_at": "2017-06-30T22:33:28.596150",
+    "id": 1,
+    "updated_at": "2017-06-30T22:36:52.051609",
+    "background_opacity": "0.8",
+    "name_field": false,
+    "tags_names": null,
+    "integration_id": 42,
+    "sequence": null,
+    "text_color": "255,255,255",
+    "position_order": 6,
+    "asset_id": 1,
+    "smart": false,
+    "lists": null,
+    "notification_option": "none",
+    "header_text": "header_text",
+    "notice_text": "Notice text",
+    "project_id": 1,
+    "cuepoints": [],
+    "type": "CtaOptin",
+    "skip": true,
+    "text_opacity": "1",
+    "name": "new name",
+    "notification_text": "notification_text",
+    "button_background_color": "36,178,99",
+    "text": "Play Video",
+    "background_color": "0,0,0",
+    "notification_url": null,
+    "list": {
+      "name": "destin_owners",
+      "id": "id"
+    },
+    "on_cuepoints": false
+  }
 }
 ```
 
@@ -355,48 +302,35 @@ Parameter  | Required  | Type    | Default | Description
 ---------  | --------- | ------- | ------- | -----------
 id         | true      | integer |         | The identifier of the cta to be updated.
 name           | false      | string  |         | Cta name
-position_order | false      | integer |         | Position in the queue when cta is displayed.
 integration_id | false      | integer  |         | The identifier of the integration.
-options        | false      | hash    |         | Cta options.
-
-Options
-
-Parameter  | Required  | Type    | Default | Description
----------  | --------- | ------- | ------- | -----------
-position   | false      | string  |         | Position inside or outside the player. Must be "inside" or "outside"
-left  | false      | string  |         | Distance from the left edge to cta. Must be in range (0..100). Example: "10%", "25%".
-top | false      | string  |         | Distance from the top edge to cta. Must be in range (0..100). Example: "10%", "25%".
-width  | false      | string  |         | Cta width. Must be in range (0..100). Example: "10%", "25%".
-height   | false      | string  |         | Cta height. Must be in range (0..100). Example: "10%", "25%".
-font_family    | false      | string  |         | Text font family. Example: Roboto, Times New Roman.
-font_style  | false      | string  |         | Text font width. Example: none, 300, 400.
-font_size  | false      | string  |         | Text font size. Must end with "px". Example: "30px".
-text_color | false      | string  |         | Text color. Must be in rgb format. Example: "100, 156, 144".
-text_opacity | false      | string  |         | Text opacity. Must be in range (0.0..1.0). Example: "0.5".
-background_color  | false      | string  |         | Background color. Must be in rgb format. Example: "100, 156, 144".
-background_opacity  | false      | string  |         | Background opacity. Must be in range (0.0..1.0). Example: "0.5".
-button_background_color          | false      | string  |         | Button background color. Must be in rgb format. Example: "100, 156, 144".
-button_background_opacity          | false      | string  |         | Button background opacity. Must be in range (0.0..1.0). Example: "0.5".
-text  | false      | string  |         | Optin text.
-header_text  | false      | string  |         | Header text.
-notice_text  | false      | string  |         | Notice text.
-notification_text | false | string |    | Notification text. Notification option must be "custom".
+position   | false      | string  |  inside   | Position inside or outside the player. Must be "inside" or "outside"
+font_size | false  | string  |  24px | Text font size. Must end with "px". Example: "30px".
+text_color  | false  | string  |  255,255,255   | Text color. Must be in rgb format. Example: "100, 156, 144".
+text_opacity | false      | string  |   1  | Text opacity. Must be in range (0.0..1.0). Example: "0.5".
+background_color | false  | string  |  0,0,0 | Background color. Must be in rgb format. Example: "100, 156, 144".
+background_opacity | false  | string  |   0.8   | Background opacity. Must be in range (0.0..1.0). Example: "0.5".
+button_background_color | false   | string  |  36,178,99   | Button background color. Must be in rgb format. Example: "100, 156, 144".
+button_background_opacity | false      | string  |  1  | Button background opacity. Must be in range (0.0..1.0). Example: "0.5".
+text | false  | string  |   Play Video    | Optin text.
+header_text  | false  | string  |  Enter your email address to play the video  | Header text.
+notice_text | false  | string  |  We promise not to send you any spam.  | Notice text.
+notification_text | false | string |  Thank you for submitting | Notification text. Notification option must be "custom".
 notification_url | false | string |     | Notification url. Notification option must be "url".
-notification_option | false | string |     | Notification option. Must be "custom", "url" or "".
-name_field | false | boolean |    | Add fields for first and last names.
+notification_option | false | string | none | Notification option. Must be "custom", "url" or "none".
+name_field | false | boolean |  false  | Add fields for first and last names.
 list | false | hash |     | List integration field.
 lists | false | array of hashes |     | Lists integration field.
 tags_names | false | array of strings |     | Tags names integration field.
 form | false | hash |     | Form integration field.
 sequence | false | hash |     | Sequence integration field.
 tags | false | array of hashes|     | Tags integration field.
-on_pause  | false      | boolean  |         | Display cta on pause.
-on_start  | false      | boolean  |         | Display cta on start.
-on_finish | false      | boolean  |         | Display cta on finish.
-fullscreen | false      | boolean  |         | Fullscreen.
-cuepoints  | false      | array of arrays  |         | Cuepoints timestamps.
-on_cuepoints | false      | boolean  |         | Display cta on cuepoints.
-smart  | false      | boolean  |         | Smart cta.
+on_pause  | false      | boolean  |  false   | Display cta on pause.
+on_start  | false      | boolean  |  false   | Display cta on start.
+on_finish | false      | boolean  |  false | Display cta on finish.
+on_cuepoints | false      | boolean  |  false | Display cta on cuepoints.
+cuepoints  | false      | array of arrays  |  []   | Cuepoints timestamps.
+smart  | false      | boolean  |  false | Smart cta.
+skip  | false      | boolean  | true | Opportunity to skip cta.
 
 ### Returns
 Returns the cta object if the update succeeded. Returns an error if update parameters are invalid or the cta ID does not exist.

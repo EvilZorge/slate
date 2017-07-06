@@ -6,53 +6,50 @@
 
 ```json
 {
-  "id": 6,
-  "name": "cta-6",
-  "type": "CtaSurvey",
-  "position_order": 6,
-  "asset_id": 1,
-  "project_id": 1,
-  "created_at": "2017-04-25T22:00:47.046700",
-  "updated_at": "2017-04-25T22:00:47.046700",
-  "answers_bg_color": "255,255,255",
-  "answers_bg_color_opacity": "0.5",
-  "button_bg_color": "255,255,255",
-  "button_bg_color_opacity": "0.5",
-  "button_text_color": "255,255,255",
-  "button_text_color_opacity": "0.5",
-  "cuepoints": [],
-  "fullscreen": false,
-  "header_color": "255,255,255",
-  "header_color_opacity": "0.5",
-  "height": "30%",
-  "left": "30%",
-  "on_cuepoints": false,
-  "on_finish": false,
-  "on_pause": false,
-  "on_start": true,
-  "position": "inside",
-  "skip": false,
-  "smart": false,
-  "submit_button": "button",
-  "submit_text": "text",
-  "survey_questions": [
-    {
-      "id": 1,
-      "text": "question",
-      "survey_options": [
-        {
-          "id": 1,
-          "text": "answer"
-        },
-        {
-          "id": 2,
-          "text": "answer"
-        }
-      ]
-    }
-  ]
-  "top": "30%",
-  "width": "30%"
+  "cta": {
+    "updated_at": "2017-07-03T17:07:41.000044",
+    "type": "CtaSurvey",
+    "text_opacity": "1",
+    "text_color": "255,255,255",
+    "survey_questions": [
+      {
+        "text": "question",
+        "survey_options": [
+          {
+            "text": "answer"
+          },
+          {
+            "text": "answer"
+          }
+        ]
+      }
+    ],
+    "submit_text": "Thanks for filling out the survey. Your responses are appreciated.",
+    "submit_button": "Close survey",
+    "smart": false,
+    "skip": true,
+    "project_id": 1,
+    "position_order": 10,
+    "position": "inside",
+    "on_start": false,
+    "on_pause": true,
+    "on_finish": false,
+    "on_cuepoints": false,
+    "name": "cta-6",
+    "id": 1,
+    "header_color_opacity": "1",
+    "header_color": "255,255,255",
+    "cuepoints": [],
+    "created_at": "2017-07-03T17:07:41.000002",
+    "button_text_color_opacity": "1",
+    "button_text_color": "255,255,255",
+    "button_text": "Continue",
+    "button_bg_color_opacity": "1",
+    "button_bg_color": "23,109,61",
+    "asset_id": 1,
+    "answers_bg_color_opacity": "0.95",
+    "answers_bg_color": "36,178,99"
+  }
 }
 ```
 
@@ -66,10 +63,6 @@ asset_id | integer | The identifier of the asset.
 project_id | integer | The identifier of the project.
 created_at | string | The date and time the cta was created.
 updated_at | string | The date and time the cta was updated.
-left | string | Distance from the left edge to cta.
-top | string | Distance from the top edge to cta.
-width | string | Cta width.
-height | string | Cta height.
 position | string | Position inside or outside the player.
 cuepoints | array of arrays | Cuepoints timestamps.
 skip | boolean | Opportunity to skip cta.
@@ -78,7 +71,8 @@ on_pause | boolean | Display cta on pause.
 on_start | boolean | Display cta on start.
 on_finish | boolean | Display cta on finish.
 on_cuepoints | boolean | Display cta on cuepoints.
-fullscreen | boolean | Fullscreen.
+text_color | string | Text color.
+text_opacity | string | Text opacity.
 answers_bg_color | string | Answers background color.
 answers_bg_color_opacity | string | Answers background opacity.
 button_bg_color | string | Button background color.
@@ -87,6 +81,7 @@ button_text_color | string | Button text color.
 button_text_color_opacity | string | Button text opacity.
 header_color | string | Header text color.
 header_color_opacity | string | Header text opacity.
+button_text | string | Next question button text.
 submit_button | string | Submit button text.
 submit_text | string | Submit text.
 survey_questions | hash | Survey questions
@@ -95,7 +90,6 @@ Survey questions
 
 Parameter | Type | Description
 --------- | ---- | -----------
-id | integer | The identifier of the survey question.
 text | string | Question text
 survey_options | hash | Survey options
 
@@ -103,7 +97,6 @@ Survey options
 
 Parameter | Type | Description
 --------- | ---- | -----------
-id | integer | The identifier of the survey answer.
 text | string | Answer text
 
 <!-- /////////////////////////// CREATE CTA BUTTON /////////////////////////// -->
@@ -118,26 +111,11 @@ curl http://localhost:3500/api/v1/ctas \
 
 ```json
 {
-  "name": "cta-6",
-  "type": "CtaSurvey",
-  "position_order": 6,
-  "asset_id": 1,
-  "options": {
-    "position": "inside",
-    "left": "30%",
-    "top": "30%",
-    "width": "30%",
-    "height": "30%",
-    "header_color": "255,255,255",
-    "header_color_opacity": "0.5",
-    "answers_bg_color": "255,255,255",
-    "answers_bg_color_opacity": "0.5",
-    "button_bg_color": "255,255,255",
-    "button_bg_color_opacity": "0.5",
-    "button_text_color": "255,255,255",
-    "button_text_color_opacity": "0.5",
-    "submit_text": "text",
-    "submit_button": "button",
+  "cta": {
+    "name": "cta-6",
+    "type": "CtaSurvey",
+    "asset_id": 1,
+    "on_pause": true,
     "survey_questions": [
       {
         "text": "question",
@@ -151,7 +129,7 @@ curl http://localhost:3500/api/v1/ctas \
         ]
       }
     ]
-  }
+  },
 }
 ```
 
@@ -159,53 +137,50 @@ curl http://localhost:3500/api/v1/ctas \
 
 ```json
 {
-  "id": 6,
-  "name": "cta-6",
-  "type": "CtaSurvey",
-  "position_order": 6,
-  "asset_id": 1,
-  "project_id": 1,
-  "created_at": "2017-04-25T22:00:47.046700",
-  "updated_at": "2017-04-25T22:00:47.046700",
-  "answers_bg_color": "255,255,255",
-  "answers_bg_color_opacity": "0.5",
-  "button_bg_color": "255,255,255",
-  "button_bg_color_opacity": "0.5",
-  "button_text_color": "255,255,255",
-  "button_text_color_opacity": "0.5",
-  "cuepoints": [],
-  "fullscreen": false,
-  "header_color": "255,255,255",
-  "header_color_opacity": "0.5",
-  "height": "30%",
-  "left": "30%",
-  "on_cuepoints": false,
-  "on_finish": false,
-  "on_pause": false,
-  "on_start": true,
-  "position": "inside",
-  "skip": false,
-  "smart": false,
-  "submit_button": "button",
-  "submit_text": "text",
-  "survey_questions": [
-    {
-      "id": 1,
-      "text": "question",
-      "survey_options": [
-        {
-          "id": 1,
-          "text": "answer"
-        },
-        {
-          "id": 2,
-          "text": "answer"
-        }
-      ]
-    }
-  ]
-  "top": "30%",
-  "width": "30%"
+  "cta": {
+    "updated_at": "2017-07-03T17:07:41.000044",
+    "type": "CtaSurvey",
+    "text_opacity": "1",
+    "text_color": "255,255,255",
+    "survey_questions": [
+      {
+        "text": "question",
+        "survey_options": [
+          {
+            "text": "answer"
+          },
+          {
+            "text": "answer"
+          }
+        ]
+      }
+    ],
+    "submit_text": "Thanks for filling out the survey. Your responses are appreciated.",
+    "submit_button": "Close survey",
+    "smart": false,
+    "skip": true,
+    "project_id": 1,
+    "position_order": 10,
+    "position": "inside",
+    "on_start": false,
+    "on_pause": true,
+    "on_finish": false,
+    "on_cuepoints": false,
+    "name": "cta-6",
+    "id": 1,
+    "header_color_opacity": "1",
+    "header_color": "255,255,255",
+    "cuepoints": [],
+    "created_at": "2017-07-03T17:07:41.000002",
+    "button_text_color_opacity": "1",
+    "button_text_color": "255,255,255",
+    "button_text": "Continue",
+    "button_bg_color_opacity": "1",
+    "button_bg_color": "23,109,61",
+    "asset_id": 1,
+    "answers_bg_color_opacity": "0.95",
+    "answers_bg_color": "36,178,99"
+  }
 }
 ```
 
@@ -223,37 +198,29 @@ Parameter  | Required  | Type    | Default | Description
 ---------  | --------- | ------- | ------- | -----------
 name           | true      | string  |         | Cta name
 type           | true      | string  |         | Cta type. Must be "CtaSurvey".
-position_order | true      | integer |         | Position in the queue when cta is displayed.
 asset_id       | true      | integer |         | The identifier of the asset.
-options        | true      | hash    |         | Cta options.
-
-Options
-
-Parameter  | Required  | Type    | Default | Description
----------  | --------- | ------- | ------- | -----------
-position   | true      | string  |         | Position inside or outside the player. Must be "inside" or "outside"
-left  | true      | string  |         | Distance from the left edge to cta. Must be in range (0..100). Example: "10%", "25%".
-top  | true      | string  |         | Distance from the top edge to cta. Must be in range (0..100). Example: "10%", "25%".
-width  | true      | string  |         | Cta width. Must be in range (0..100). Example: "10%", "25%".
-height  | true      | string  |         | Cta height. Must be in range (0..100). Example: "10%", "25%".
-on_pause  | false      | boolean  |         | Display cta on pause.
-on_start  | false      | boolean  |         | Display cta on start.
-on_finish | false      | boolean  |         | Display cta on finish.
-fullscreen | false      | boolean  |         | Fullscreen.
-cuepoints  | false      | array of arrays  |         | Cuepoints timestamps.
-on_cuepoints | false      | boolean  |         | Display cta on cuepoints.
-smart  | false      | boolean  |         | Smart cta.
-answers_bg_color | true | string |       | Answers background color.  Must be in rgb format. Example: "100, 156, 144".
-answers_bg_color_opacity | true | string |      | Answers background opacity. Must be in range (0.0..1.0). Example: "0.5".
-button_bg_color | true | string |      | Button background color.  Must be in rgb format. Example: "100, 156, 144".
-button_bg_color_opacity | true | string |      | Button background opacity. Must be in range (0.0..1.0). Example: "0.5".
-button_text_color | true | string |      | Button text color.  Must be in rgb format. Example: "100, 156, 144".
-button_text_color_opacity | true | string |      | Button text opacity. Must be in range (0.0..1.0). Example: "0.5".
-header_color | true | string |      | Header text color.  Must be in rgb format. Example: "100, 156, 144".
-header_color_opacity | true | string |      | Header text opacity. Must be in range (0.0..1.0). Example: "0.5".
-submit_button | false | string |      | Submit button text.
-submit_text | false | string |      | Submit text.
 survey_questions | true | arrays of hashes |      | Survey questions.
+position   | false      | string  | inside  | Position inside or outside the player. Must be "inside" or "outside"
+on_pause  | false      | boolean  |  false  | Display cta on pause.
+on_start  | false      | boolean  |  false  | Display cta on start.
+on_finish | false      | boolean  |  false  | Display cta on finish.
+on_cuepoints | false      | boolean  |  false  | Display cta on cuepoints.
+cuepoints  | false      | array of arrays  |  []  | Cuepoints timestamps.
+smart  | false      | boolean  |  false   | Smart cta.
+skip  | false      | boolean  |  true   | Opportunity to skip cta.
+text_color | false | string | 255,255,255 | Text color.  Must be in rgb format. Example: "100, 156, 144".
+text_opacity | false | string |  1   | Text opacity. Must be in range (0.0..1.0). Example: "0.5".
+answers_bg_color | false | string | 36,178,99 | Answers background color.  Must be in rgb format. Example: "100, 156, 144".
+answers_bg_color_opacity | false | string | 0.95 | Answers background opacity. Must be in range (0.0..1.0). Example: "0.5".
+button_bg_color | false | string | 23,109,61 | Button background color.  Must be in rgb format. Example: "100, 156, 144".
+button_bg_color_opacity | false | string | 1 | Button background opacity. Must be in range (0.0..1.0). Example: "0.5".
+button_text_color | false | string | 255,255,255 | Button text color.  Must be in rgb format. Example: "100, 156, 144".
+button_text_color_opacity | false | string | 1 | Button text opacity. Must be in range (0.0..1.0). Example: "0.5".
+header_color | false | string | 255,255,255 | Header text color.  Must be in rgb format. Example: "100, 156, 144".
+header_color_opacity | false | string | 1 | Header text opacity. Must be in range (0.0..1.0). Example: "0.5".
+button_text | false | string |  Continue | Next question button text.
+submit_button | false | string |  Close survey | Submit button text.
+submit_text | false | string | Thanks for filling out the survey.  Your responses are appreciated. | Submit text.
 
 Survey questions
 
@@ -269,25 +236,33 @@ Parameter  | Required  | Type    | Default | Description
 text | true | string | | Answer text
 
 ### Returns
-Returns a cta object if the call succeeded. If a parent cta id is provided and does not exist or available, the call will return an error.
+Returns a cta object if the call succeeded. If a cta id is provided and does not exist or available, the call will return an error.
 
 <!-- /////////////////////////// UPDATE CTA /////////////////////////// -->
 
 ## Update a cta survey
 
 ```shell
-curl http://localhost:3500/api/v1/ctas/6 \
+curl http://localhost:3500/api/v1/ctas/1 \
   -d api_key=test_key
 ```
 > Example Request Body Parameters
 
 ```json
 {
-  "name": "new name",
-  "options": {
+  "cta": {
+    "name": "new_name",
     "position": "outside",
-    "left": "99%",
-    "width": "50%"
+    "survey_questions": [
+      {
+        "text": "new_question",
+        "survey_options": [
+          {
+            "text": "new_answer"
+          }
+        ]
+      }
+    ]
   }
 }
 ```
@@ -296,53 +271,47 @@ curl http://localhost:3500/api/v1/ctas/6 \
 
 ```json
 {
-  "id": 6,
-  "name": "new name",
-  "type": "CtaSurvey",
-  "position_order": 6,
-  "asset_id": 1,
-  "project_id": 1,
-  "created_at": "2017-04-25T22:00:47.046700",
-  "updated_at": "2017-04-25T22:00:47.046700",
-  "answers_bg_color": "255,255,255",
-  "answers_bg_color_opacity": "0.5",
-  "button_bg_color": "255,255,255",
-  "button_bg_color_opacity": "0.5",
-  "button_text_color": "255,255,255",
-  "button_text_color_opacity": "0.5",
-  "cuepoints": [],
-  "fullscreen": false,
-  "header_color": "255,255,255",
-  "header_color_opacity": "0.5",
-  "height": "30%",
-  "left": "99%",
-  "on_cuepoints": false,
-  "on_finish": false,
-  "on_pause": false,
-  "on_start": true,
-  "position": "inside",
-  "skip": false,
-  "smart": false,
-  "submit_button": "button",
-  "submit_text": "text",
-  "survey_questions": [
-    {
-      "id": 1,
-      "text": "question",
-      "survey_options": [
-        {
-          "id": 1,
-          "text": "answer"
-        },
-        {
-          "id": 2,
-          "text": "answer"
-        }
-      ]
-    }
-  ]
-  "top": "30%",
-  "width": "50%"
+  "cta": {
+    "updated_at": "2017-07-03T17:11:44.696666",
+    "type": "CtaSurvey",
+    "text_opacity": "1",
+    "text_color": "255,255,255",
+    "survey_questions": [
+      {
+        "text": "new_question",
+        "survey_options": [
+          {
+            "text": "new_answer"
+          }
+        ]
+      }
+    ],
+    "submit_text": "Thanks for filling out the survey. Your responses are appreciated.",
+    "submit_button": "Close survey",
+    "smart": false,
+    "skip": true,
+    "project_id": 1,
+    "position_order": 10,
+    "position": "outside",
+    "on_start": false,
+    "on_pause": true,
+    "on_finish": false,
+    "on_cuepoints": false,
+    "name": "new_name",
+    "id": 1,
+    "header_color_opacity": "1",
+    "header_color": "255,255,255",
+    "cuepoints": [],
+    "created_at": "2017-07-03T17:07:41.000002",
+    "button_text_color_opacity": "1",
+    "button_text_color": "255,255,255",
+    "button_text": "Continue",
+    "button_bg_color_opacity": "1",
+    "button_bg_color": "23,109,61",
+    "asset_id": 1,
+    "answers_bg_color_opacity": "0.95",
+    "answers_bg_color": "36,178,99"
+  }
 }
 ```
 
@@ -360,42 +329,34 @@ Parameter  | Required  | Type    | Default | Description
 ---------  | --------- | ------- | ------- | -----------
 id | true | integer | | The identifier of the cta.
 name           | false      | string  |         | Cta name
-position_order | false      | integer |         | Position in the queue when cta is displayed.
-options        | false      | hash    |         | Cta options.
-
-Options
-
-Parameter  | Required  | Type    | Default | Description
----------  | --------- | ------- | ------- | -----------
-position   | false      | string  |         | Position inside or outside the player. Must be "inside" or "outside"
-left  | false      | string  |         | Distance from the left edge to cta. Must be in range (0..100). Example: "10%", "25%".
-top  | false      | string  |         | Distance from the top edge to cta. Must be in range (0..100). Example: "10%", "25%".
-width  | false      | string  |         | Cta width. Must be in range (0..100). Example: "10%", "25%".
-height  | false      | string  |         | Cta height. Must be in range (0..100). Example: "10%", "25%".
-on_pause  | false      | boolean  |         | Display cta on pause.
-on_start  | false      | boolean  |         | Display cta on start.
-on_finish | false      | boolean  |         | Display cta on finish.
-fullscreen | false      | boolean  |         | Fullscreen.
-cuepoints  | false      | array of arrays  |         | Cuepoints timestamps.
-on_cuepoints | false      | boolean  |         | Display cta on cuepoints.
-smart  | false      | boolean  |         | Smart cta.
-answers_bg_color | false | string |       | Answers background color.  Must be in rgb format. Example: "100, 156, 144".
-answers_bg_color_opacity | false | string |      | Answers background opacity. Must be in range (0.0..1.0). Example: "0.5".
-button_bg_color | false | string |      | Button background color.  Must be in rgb format. Example: "100, 156, 144".
-button_bg_color_opacity | false | string |      | Button background opacity. Must be in range (0.0..1.0). Example: "0.5".
-button_text_color | false | string |      | Button text color.  Must be in rgb format. Example: "100, 156, 144".
-button_text_color_opacity | false | string |      | Button text opacity. Must be in range (0.0..1.0). Example: "0.5".
-header_color | false | string |      | Header text color.  Must be in rgb format. Example: "100, 156, 144".
-header_color_opacity | false | string |      | Header text opacity. Must be in range (0.0..1.0). Example: "0.5".
-submit_button | false | string |      | Submit button text.
-submit_text | false | string |      | Submit text.
+survey_questions | false | arrays of hashes |      | Survey questions.
+position   | false      | string  | inside  | Position inside or outside the player. Must be "inside" or "outside"
+on_pause  | false      | boolean  |  false  | Display cta on pause.
+on_start  | false      | boolean  |  false  | Display cta on start.
+on_finish | false      | boolean  |  false  | Display cta on finish.
+on_cuepoints | false      | boolean  |  false  | Display cta on cuepoints.
+cuepoints  | false      | array of arrays  |  []  | Cuepoints timestamps.
+smart  | false      | boolean  |  false   | Smart cta.
+skip  | false      | boolean  |  true   | Opportunity to skip cta.
+text_color | false | string | 255,255,255 | Text color.  Must be in rgb format. Example: "100, 156, 144".
+text_opacity | false | string |  1   | Text opacity. Must be in range (0.0..1.0). Example: "0.5".
+answers_bg_color | false | string | 36,178,99 | Answers background color.  Must be in rgb format. Example: "100, 156, 144".
+answers_bg_color_opacity | false | string | 0.95 | Answers background opacity. Must be in range (0.0..1.0). Example: "0.5".
+button_bg_color | false | string | 23,109,61 | Button background color.  Must be in rgb format. Example: "100, 156, 144".
+button_bg_color_opacity | false | string | 1 | Button background opacity. Must be in range (0.0..1.0). Example: "0.5".
+button_text_color | false | string | 255,255,255 | Button text color.  Must be in rgb format. Example: "100, 156, 144".
+button_text_color_opacity | false | string | 1 | Button text opacity. Must be in range (0.0..1.0). Example: "0.5".
+header_color | false | string | 255,255,255 | Header text color.  Must be in rgb format. Example: "100, 156, 144".
+header_color_opacity | false | string | 1 | Header text opacity. Must be in range (0.0..1.0). Example: "0.5".
+button_text | false | string |  Continue | Next question button text.
+submit_button | false | string |  Close survey | Submit button text.
+submit_text | false | string | Thanks for filling out the survey.  Your responses are appreciated. | Submit text.
 survey_questions | false | arrays of hashes |      | Survey questions.
 
 Survey questions
 
 Parameter  | Required  | Type    | Default | Description
 ---------  | --------- | ------- | ------- | -----------
-id | true | integer | | The identifier of the question.
 text | false | string | | Question text
 survey_options | false | array of hashes | | Survey answers
 
@@ -403,7 +364,6 @@ Survey options
 
 Parameter  | Required  | Type    | Default | Description
 ---------  | --------- | ------- | ------- | -----------
-id | true | integer | | The identifier of the answer.
 text | false | string | | Answer text
 
 ### Returns

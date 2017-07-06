@@ -6,20 +6,22 @@
 
 ```json
 {
-  "id": 1,
-  "name": "First folder",
-  "created_at": "2017-04-25T22:00:47.046700",
-  "updated_at": "2017-04-25T22:00:47.046700",
-  "subfolders": [
-    {
-      "id": 3,
-      "name": "Subfolder",
-      "created_at": "2017-04-25T22:00:47.046700",
-      "updated_at": "2017-04-25T22:00:47.046700",
-      "projects_count": 0
-    },
-  ],
-  "projects_count": 5
+  "folder": {
+    "id": 1,
+    "name": "First folder",
+    "created_at": "2017-04-25T22:00:47.046700",
+    "updated_at": "2017-04-25T22:00:47.046700",
+    "subfolders": [
+      {
+        "id": 3,
+        "name": "Subfolder",
+        "created_at": "2017-04-25T22:00:47.046700",
+        "updated_at": "2017-04-25T22:00:47.046700",
+        "projects_count": 0
+      }
+    ],
+    "projects_count": 5
+  }
 }
 ```
 
@@ -44,32 +46,34 @@ curl http://localhost:3500/api/v1/folders \
 > Example Response
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "First folder",
-    "created_at": "2017-04-25T22:00:47.046700",
-    "updated_at": "2017-04-25T22:00:47.046700",
-    "subfolders": [],
-    "projects_count": 5
-  },
-  {
-    "id": 2,
-    "name": "Second folder",
-    "created_at": "2017-04-25T22:00:47.047560",
-    "updated_at": "2017-04-25T22:00:47.047560",
-    "subfolders": [
-      {
-        "id": 3,
-        "name": "Subfolder",
-        "created_at": "2017-04-25T22:00:47.046700",
-        "updated_at": "2017-04-25T22:00:47.046700",
-        "projects_count": 0
-      },
-    ],
-    "projects_count": 2
-  }
-]
+{
+  "folders": [
+    {
+      "id": 1,
+      "name": "First folder",
+      "created_at": "2017-04-25T22:00:47.046700",
+      "updated_at": "2017-04-25T22:00:47.046700",
+      "subfolders": [],
+      "projects_count": 5
+    },
+    {
+      "id": 2,
+      "name": "Second folder",
+      "created_at": "2017-04-25T22:00:47.047560",
+      "updated_at": "2017-04-25T22:00:47.047560",
+      "subfolders": [
+        {
+          "id": 3,
+          "name": "Subfolder",
+          "created_at": "2017-04-25T22:00:47.046700",
+          "updated_at": "2017-04-25T22:00:47.046700",
+          "projects_count": 0
+        }
+      ],
+      "projects_count": 2
+    }
+  ]
+}
 ```
 
 This endpoint retrieves all folders.
@@ -94,20 +98,22 @@ curl http://localhost:3500/api/v1/folders/2 \
 
 ```json
 {
-  "id": 2,
-  "name": "Second folder",
-  "created_at": "2017-04-25T22:00:47.047560",
-  "updated_at": "2017-04-25T22:00:47.047560",
-  "subfolders": [
-    {
-      "id": 3,
-      "name": "Subfolder",
-      "created_at": "2017-04-25T22:00:47.046700",
-      "updated_at": "2017-04-25T22:00:47.046700",
-      "projects_count": 0
-    },
-  ],
-  "projects_count": 2
+  "folder": {
+    "id": 2,
+    "name": "Second folder",
+    "created_at": "2017-04-25T22:00:47.047560",
+    "updated_at": "2017-04-25T22:00:47.047560",
+    "subfolders": [
+      {
+        "id": 3,
+        "name": "Subfolder",
+        "created_at": "2017-04-25T22:00:47.046700",
+        "updated_at": "2017-04-25T22:00:47.046700",
+        "projects_count": 0
+      }
+    ],
+    "projects_count": 2
+  }
 }
 ```
 
@@ -140,11 +146,13 @@ curl http://localhost:3500/api/v1/folders \
 
 ```json
 {
-  "id": 1,
-  "name": "Some folder",
-  "created_at": "2017-04-25T22:00:47.047560",
-  "updated_at": "2017-04-25T22:00:47.047560",
-  "projects_count": 0
+  "folder": {
+    "id": 1,
+    "name": "Some folder",
+    "created_at": "2017-04-25T22:00:47.047560",
+    "updated_at": "2017-04-25T22:00:47.047560",
+    "projects_count": 0
+  }
 }
 ```
 
@@ -178,11 +186,13 @@ curl http://localhost:3500/api/v1/folders/1 \
 
 ```json
 {
-  "id": 1,
-  "name": "New name",
-  "created_at": "2017-04-25T22:00:47.047560",
-  "updated_at": "2017-04-25T22:00:47.047560",
-  "projects_count": 0
+  "folder": {
+    "id": 1,
+    "name": "New name",
+    "created_at": "2017-04-25T22:00:47.047560",
+    "updated_at": "2017-04-25T22:00:47.047560",
+    "projects_count": 0
+  }
 }
 ```
 
