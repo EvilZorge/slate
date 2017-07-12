@@ -24,6 +24,8 @@
     "popup_text_opacity": "1",
     "popup_text_color": "255,255,255",
     "popup_text": "Please Share This Video",
+    "popup_notice_text": "The video will continue playing once you click the button below",
+    "button_text": null,
     "opacity": "1",
     "on_start": false,
     "on_pause": true,
@@ -66,6 +68,8 @@ background_opacity | string | Background opacity.
 color | string | Text color.
 opacity | string | Text opacity.
 popup_text | string | Popup text.
+popup_notice_text | string | Popup notice text.
+button_text | string | Button text.
 popup_text_color | string | Popup text color.
 popup_text_opacity | string | Popup text opacity.
 share_button | string | Share button. Must be "facebook" or "twitter".
@@ -124,6 +128,8 @@ curl http://localhost:3500/api/v1/ctas \
     "popup_text_opacity": "1",
     "popup_text_color": "255,255,255",
     "popup_text": "Please Share This Video",
+    "popup_notice_text": "The video will continue playing once you click the button below",
+    "button_text": null,
     "opacity": "1",
     "on_start": false,
     "on_pause": true,
@@ -164,6 +170,8 @@ background_opacity  | false      | string  |  0.9 | Background opacity. Must be 
 color | false | string |  130,196,236 | Text color. Must be in rgb format. Example: "100, 156, 144".
 opacity | false | string | 1  | Text opacity. Must be in range (0.0..1.0). Example: "0.5".
 popup_text | false | string |  Please Share This Video | Popup text.
+popup_notice_text | false | string | The video will continue playing once you click the button below | Popup notice text.
+button_text | false | string | | Button text.
 popup_text_color | false | string |  255,255,255  | Popup text color. Must be in rgb format. Example: "100, 156, 144".
 popup_text_opacity | false | string |  1  | Popup text opacity. Must be in range (0.0..1.0). Example: "0.5".
 share_button | true | string |     | Share button. Must be "facebook" or "twitter".
@@ -227,6 +235,8 @@ curl http://localhost:3500/api/v1/ctas/1 \
     "popup_text_opacity": "1",
     "popup_text_color": "255,255,255",
     "popup_text": "Please Share This Video",
+    "popup_notice_text": "The video will continue playing once you click the button below",
+    "button_text": null,
     "opacity": "1",
     "on_start": false,
     "on_pause": true,
@@ -266,6 +276,8 @@ background_opacity  | false      | string  |  0.9 | Background opacity. Must be 
 color | false | string |  130,196,236 | Text color. Must be in rgb format. Example: "100, 156, 144".
 opacity | false | string | 1  | Text opacity. Must be in range (0.0..1.0). Example: "0.5".
 popup_text | false | string |  Please Share This Video | Popup text.
+popup_notice_text | false | string | The video will continue playing once you click the button below | Popup notice text.
+button_text | false | string | | Button text.
 popup_text_color | false | string |  255,255,255  | Popup text color. Must be in rgb format. Example: "100, 156, 144".
 popup_text_opacity | false | string |  1  | Popup text opacity. Must be in range (0.0..1.0). Example: "0.5".
 share_button | false | string |     | Share button. Must be "facebook" or "twitter".
