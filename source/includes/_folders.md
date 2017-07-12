@@ -39,7 +39,7 @@ projects_count | integer | Projects count inside the folder
 ## List all folders
 
 ```shell
-curl http://localhost:3500/api/v1/folders \
+curl http://localhost:3500/v1/folders \
   -d api_key=test_key
 ```
 
@@ -80,7 +80,7 @@ This endpoint retrieves all folders.
 
 ### HTTP Request
 
-`GET http://localhost:3500/api/v1/folders`
+`GET http://localhost:3500/v1/folders`
 
 ### Returns
 Returns a list of your folders if the call succeeded.
@@ -90,7 +90,7 @@ Returns a list of your folders if the call succeeded.
 ## Retrieve a folder
 
 ```shell
-curl http://localhost:3500/api/v1/folders/2 \
+curl http://localhost:3500/v1/folders/2 \
   -d api_key=test_key
 ```
 
@@ -121,7 +121,7 @@ This endpoint retrieves a specific folder.
 
 ### HTTP Request
 
-`GET http://localhost:3500/api/v1/folders/<ID>`
+`GET http://localhost:3500/v1/folders/<ID>`
 
 ### Request body parameters
 
@@ -137,7 +137,7 @@ Returns a folder object if the call succeeded. If the folder ID does not exist, 
 ## Create a folder
 
 ```shell
-curl http://localhost:3500/api/v1/folders \
+curl http://localhost:3500/v1/folders \
   -d api_key=test_key \
   -d name="Some folder"
 ```
@@ -160,7 +160,7 @@ This endpoint create a specific folder.
 
 ### HTTP Request
 
-`POST http://localhost:3500/api/v1/folders`
+`POST http://localhost:3500/v1/folders`
 
 ### Request body parameters
 
@@ -177,7 +177,7 @@ Returns a folder object if the call succeeded. If a parent folder id is provided
 ## Update a folder
 
 ```shell
-curl http://localhost:3500/api/v1/folders/1 \
+curl http://localhost:3500/v1/folders/1 \
   -d api_key=test_key \
   -d name="New name"
 ```
@@ -200,7 +200,7 @@ This endpoint updates a specific folder.
 
 ### HTTP Request
 
-`PATCH/PUT http://localhost:3500/api/v1/folders/<ID>`
+`PATCH/PUT http://localhost:3500/v1/folders/<ID>`
 
 ### Request body parameters
 
@@ -218,7 +218,7 @@ Returns the folder object if the update succeeded. Returns an error if update pa
 ## Delete a folder
 
 ```shell
-curl http://localhost:3500/api/v1/folders/1 \
+curl http://localhost:3500/v1/folders/1 \
   -d api_key=test_key
   -X DELETE
 ```
@@ -232,7 +232,7 @@ This endpoint deletes a specific folder.
 
 ### HTTP Request
 
-`DELETE http://localhost:3500/api/v1/folders/<ID>`
+`DELETE http://localhost:3500/v1/folders/<ID>`
 
 ### Request body parameters
 

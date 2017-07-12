@@ -64,7 +64,7 @@ background_opacity | string | Background opacity.
 ## Create a cta html
 
 ```shell
-curl http://localhost:3500/api/v1/ctas \
+curl http://localhost:3500/v1/ctas \
   -d api_key=test_key
 ```
 > Example Request Body Parameters
@@ -120,7 +120,7 @@ This endpoint create a specific cta.
 
 ### HTTP Request
 
-`POST http://localhost:3500/api/v1/ctas`
+`POST http://localhost:3500/v1/ctas`
 
 ### Request body parameters
 
@@ -156,7 +156,7 @@ Returns a cta object if the call succeeded. If a cta id is provided and does not
 ## Update a cta html
 
 ```shell
-curl http://localhost:3500/api/v1/ctas/7 \
+curl http://localhost:3500/v1/ctas/7 \
   -d api_key=test_key
 ```
 > Example Request Body Parameters
@@ -207,7 +207,7 @@ This endpoint updates a specific cta.
 
 ### HTTP Request
 
-`PATCH/PUT http://localhost:3500/api/v1/ctas/<ID>`
+`PATCH/PUT http://localhost:3500/v1/ctas/<ID>`
 
 ### Request body parameters
 

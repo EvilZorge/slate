@@ -166,7 +166,7 @@ api_key | string | Api key(secret key).
 ## List all integrations
 
 ```shell
-curl http://localhost:3500/api/v1/integrations \
+curl http://localhost:3500/v1/integrations \
   -d api_key=test_key
 ```
 
@@ -206,7 +206,7 @@ This endpoint retrieves all integrations.
 
 ### HTTP Request
 
-`GET http://localhost:3500/api/v1/integrations`
+`GET http://localhost:3500/v1/integrations`
 
 ### Returns
 Returns a list of your integrations without secret keys if the call succeeded.
@@ -216,7 +216,7 @@ Returns a list of your integrations without secret keys if the call succeeded.
 ## Retrieve a integration
 
 ```shell
-curl http://localhost:3500/api/v1/integrations/1 \
+curl http://localhost:3500/v1/integrations/1 \
   -d api_key=test_key
 ```
 
@@ -237,13 +237,14 @@ curl http://localhost:3500/api/v1/integrations/1 \
     "publishable_key": "publishable_key"
   }
 }
+
 ```
 
 This endpoint retrieves a specific integration without secret keys.
 
 ### HTTP Request
 
-`GET http://localhost:3500/api/v1/integrations/<ID>`
+`GET http://localhost:3500/v1/integrations/<ID>`
 
 ### Request body parameters
 
