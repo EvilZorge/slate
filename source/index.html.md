@@ -9,6 +9,7 @@ toc_footers:
 
 includes:
   - folders
+  - projects
   - integrations
   - ctas
   - cta_button
