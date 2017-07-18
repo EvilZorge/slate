@@ -79,6 +79,8 @@ Returns a project id and assets ids if the call succeeded.
 
 ## Upload
 
+Max file size is 4GB. Max total size of all files is 20GB.
+
 ```shell
 curl http://localhost:3500/v1/projects/upload \
   -X POST \
