@@ -1416,6 +1416,182 @@ You must replace <code>test_key</code> with your personal API key.
 
 <p>Returns a integration object if the call succeeded. If the integration ID does not exist, this call returns an error.</p>
 
+          <h1 id="accounts">Accounts</h1>
+
+<!-- /////////////////////////// CREATE ACCOUNT /////////////////////////// -->
+
+<h2 id="create-a-account">Create a account</h2>
+<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/accounts <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -d <span class="s1">'{
+      "account": {
+        "name": "user_name",
+        "email": "test@gmail.com"
+      },
+      "plan_remote_id": "test",
+      "api_key": "thirdparty_api_key"
+  }'</span>
+</code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="mi">201</span><span class="w"> </span><span class="err">CREATED</span><span class="w">
+</span></code></pre>
+<p>This endpoint create a specific account.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://localhost:3500/v1/accounts</code></p>
+
+<h3 id="request-body-parameters">Request body parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>plan_remote_id</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+<td>Plan remote id.</td>
+</tr>
+<tr>
+<td>account</td>
+<td>true</td>
+<td>hash</td>
+<td></td>
+<td>Account info.</td>
+</tr>
+</tbody></table>
+
+<p>Account</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+<td>User name.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+<td>Email.</td>
+</tr>
+<tr>
+<td>company_name</td>
+<td>false</td>
+<td>string</td>
+<td></td>
+<td>Account name.</td>
+</tr>
+</tbody></table>
+
+<h3 id="returns">Returns</h3>
+
+<p>Returns 201 CREATED status code on success.</p>
+
+<!-- /////////////////////////// UPDATE ACCOUNT /////////////////////////// -->
+
+<h2 id="update-an-account">Update an account</h2>
+<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/accounts/test@gmail.com <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X PUT <span class="se">\</span>
+  -d <span class="s1">'{
+      "account": {
+        "action": "update_plan",
+        "plan_remote_id": "test"
+      },
+      "api_key": "thirdparty_api_key"
+  }'</span>
+</code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="mi">200</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span></code></pre>
+<p>This endpoint updates a specific account.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PATCH/PUT http://localhost:3500/v1/accounts/&lt;EMAIL&gt;</code></p>
+
+<h3 id="request-body-parameters">Request body parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+<td>The email of the account to be updated.</td>
+</tr>
+<tr>
+<td>account</td>
+<td>true</td>
+<td>hash</td>
+<td></td>
+<td>Account info.</td>
+</tr>
+</tbody></table>
+
+<p>Account</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>action</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+<td>Action can be &ldquo;block&rdquo;, &ldquo;unblock&rdquo;, &ldquo;lock&rdquo;, &ldquo;unlock&rdquo; or &ldquo;update_plan&rdquo;.</td>
+</tr>
+<tr>
+<td>plan_remote_id</td>
+<td>false</td>
+<td>string</td>
+<td></td>
+<td>Plan remote id. Must be added only for &ldquo;update_plan&rdquo; action.</td>
+</tr>
+</tbody></table>
+
+<h3 id="returns">Returns</h3>
+
+<p>Returns 200 OK status code on success.</p>
+
           <h1 id="ctas">Ctas</h1>
 
 <h2 id="list-all-ctas">List all ctas</h2>
