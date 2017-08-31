@@ -11,6 +11,7 @@ includes:
   - folders
   - projects
   - integrations
+  - accounts
   - ctas
   - cta_button
   - cta_optin
