@@ -234,8 +234,7 @@
 <blockquote>
 <p>To authorize, add api_key field to query parameters:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"api_endpoint_here"</span>
- -d <span class="nv">api_key</span><span class="o">=</span>test_key
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"api_endpoint_here?api_key=test_key"</span>
 </code></pre>
 <blockquote>
 <p>Make sure to replace <code class="prettyprint">test_key</code> with your API key.</p>
@@ -318,8 +317,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// FOLDERS /////////////////////////// -->
 
 <h2 id="list-all-folders">List all folders</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/folders <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/folders?api_key<span class="o">=</span>test_key
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -366,8 +364,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// SPECIFIC FOLDER /////////////////////////// -->
 
 <h2 id="retrieve-a-folder">Retrieve a folder</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/folders/2 <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/folders/2?api_key<span class="o">=</span>test_key
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -425,8 +422,14 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h2 id="create-a-folder">Create a folder</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/folders <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key <span class="se">\</span>
-  -d <span class="nv">name</span><span class="o">=</span><span class="s2">"Some folder"</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -d <span class="s1">'{
+        "folder": {
+          "name": "Some folder"
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -482,8 +485,14 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h2 id="update-a-folder">Update a folder</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/folders/1 <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key <span class="se">\</span>
-  -d <span class="nv">name</span><span class="o">=</span><span class="s2">"New name"</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X PUT <span class="se">\</span>
+  -d <span class="s1">'{
+        "folder": {
+          "name": "New name"
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -545,8 +554,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// DELETE FOLDER /////////////////////////// -->
 
 <h2 id="delete-a-folder">Delete a folder</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/folders/1 <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/folders/1?api_key<span class="o">=</span>test_key <span class="se">\</span>
   -X DELETE
 </code></pre>
 <blockquote>
@@ -554,7 +562,7 @@ You must replace <code>test_key</code> with your personal API key.
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="mi">204</span><span class="w"> </span><span class="err">NO</span><span class="w"> </span><span class="err">CONTENT</span><span class="w">
 </span></code></pre>
-<p>This endpoint deletes a specific folder.</p>
+<p>This endpoint deletes a specific folder and all projects inside it.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -591,19 +599,19 @@ You must replace <code>test_key</code> with your personal API key.
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -d <span class="s1">'{
-      "files": [
-        {
-          "url": "http://techslides.com/demos/sample-videos/small.mp4",
-          "csn_type": "op_hosting"
-        },
-        {
-          "url": "http://techslides.com/demos/sample-videos/small.mp4",
-          "csn_type": "amazons3",
-          "csn_id": 2
-        }
-      ],
-      "api_key": "your_api_key"
-  }'</span>
+        "files": [
+          {
+            "url": "http://techslides.com/demos/sample-videos/small.mp4",
+            "csn_type": "op_hosting"
+          },
+          {
+            "url": "http://techslides.com/demos/sample-videos/small.mp4",
+            "csn_type": "amazons3",
+            "csn_id": 2
+          }
+        ],
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -768,7 +776,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://localhost:3500/v1/projects/connect</code></p>
+<p><code class="prettyprint">POST http://localhost:3500/v1/projects/upload</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -1314,11 +1322,14 @@ You must replace <code>test_key</code> with your personal API key.
 </tr>
 </tbody></table>
 
+<h3 id="integration-zapier">Integration Zapier</h3>
+
+<p>No additional fields</p>
+
 <!-- /////////////////////////// INTEGRATIONS /////////////////////////// -->
 
 <h2 id="list-all-integrations">List all integrations</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/integrations <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/integrations?api_key<span class="o">=</span>test_key
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1364,8 +1375,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// SPECIFIC INTEGRATION /////////////////////////// -->
 
 <h2 id="retrieve-a-integration">Retrieve a integration</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/integrations/1 <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/integrations/1?api_key<span class="o">=</span>test_key
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1384,7 +1394,6 @@ You must replace <code>test_key</code> with your personal API key.
     </span><span class="s2">"publishable_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"publishable_key"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-
 </span></code></pre>
 <p>This endpoint retrieves a specific integration without secret keys.</p>
 
@@ -1425,13 +1434,13 @@ You must replace <code>test_key</code> with your personal API key.
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -d <span class="s1">'{
-      "account": {
-        "name": "user_name",
-        "email": "test@gmail.com"
-      },
-      "plan_remote_id": "test",
-      "api_key": "thirdparty_api_key"
-  }'</span>
+        "account": {
+          "name": "user_name",
+          "email": "test@gmail.com"
+        },
+        "plan_remote_id": "test",
+        "api_key": "thirdparty_api_key"
+      }'</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1516,12 +1525,12 @@ You must replace <code>test_key</code> with your personal API key.
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X PUT <span class="se">\</span>
   -d <span class="s1">'{
-      "account": {
-        "action": "update_plan",
-        "plan_remote_id": "test"
-      },
-      "api_key": "thirdparty_api_key"
-  }'</span>
+        "account": {
+          "action": "update_plan",
+          "plan_remote_id": "test"
+        },
+        "api_key": "thirdparty_api_key"
+      }'</span>
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1595,9 +1604,7 @@ You must replace <code>test_key</code> with your personal API key.
           <h1 id="ctas">Ctas</h1>
 
 <h2 id="list-all-ctas">List all ctas</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
-  -d <span class="nv">asset_id</span><span class="o">=</span>1
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas?api_key<span class="o">=</span>test_key&amp;asset_id<span class="o">=</span>1
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1724,8 +1731,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// SPECIFIC CTA /////////////////////////// -->
 
 <h2 id="retrieve-a-cta">Retrieve a cta</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/2 <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/2?api_key<span class="o">=</span>test_key
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1809,8 +1815,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// DELETE CTA /////////////////////////// -->
 
 <h2 id="delete-a-cta">Delete a cta</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1?api_key<span class="o">=</span>test_key <span class="se">\</span>
   -X DELETE
 </code></pre>
 <blockquote>
@@ -2059,21 +2064,19 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h2 id="create-a-cta-button">Create a cta button</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -d <span class="s1">'{
+        "cta": {
+          "name": "cta-1",
+          "type": "CtaButton",
+          "asset_id": 1,
+          "link": "http://google.com",
+          "on_pause": true
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
-<blockquote>
-<p>Example Request Body Parameters</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"cta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cta-1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CtaButton"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"asset_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://google.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"on_pause"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -2326,20 +2329,18 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h2 id="update-a-cta-button">Update a cta button</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X PUT <span class="se">\</span>
+  -d <span class="s1">'{
+        "cta": {
+          "name": "new name",
+          "position": "outside",
+          "left": "99%",
+          "width": "50%"
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
-<blockquote>
-<p>Example Request Body Parameters</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"cta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new name"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outside"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"left"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99%"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50%"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -2831,27 +2832,25 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h2 id="create-a-cta-optin">Create a cta optin</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -d <span class="s1">'{
+        "cta": {
+          "name": "cta-2",
+          "type": "CtaOptin",
+          "asset_id": 1,
+          "integration_id": 42,
+          "on_start": true,
+          "header_text": "header_text",
+          "notification_text": "notification_text",
+          "list": {
+            "id": "id",
+            "name": "destin_owners"
+          }
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
-<blockquote>
-<p>Example Request Body Parameters</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"cta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cta-2"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CtaOptin"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"asset_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"integration_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"on_start"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"header_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"header_text"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"notification_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_text"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"list"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"destin_owners"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -3156,19 +3155,17 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h2 id="update-a-cta-optin">Update a cta optin</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X PUT <span class="se">\</span>
+  -d <span class="s1">'{
+        "cta": {
+          "name": "new name",
+          "position": "outside",
+          "notice_text": "Notice text"
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
-<blockquote>
-<p>Example Request Body Parameters</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"cta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new name"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outside"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"notice_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Notice text"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -3681,29 +3678,27 @@ You must replace <code>test_key</code> with your personal API key.
 </tr>
 </tbody></table>
 
-<!-- /////////////////////////// CREATE CTA BUTTON /////////////////////////// -->
+<!-- /////////////////////////// CREATE CTA SOCIAL /////////////////////////// -->
 
 <h2 id="create-a-cta-social">Create a cta social</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -d <span class="s1">'{
+        "cta": {
+          "name": "cta-3",
+          "type": "CtaSocial",
+          "asset_id": 1,
+          "share_title": "share_title",
+          "share_description": "desc",
+          "share_link": "http://google.com",
+          "share_image": "http://google.com",
+          "share_button": "share_facebook",
+          "on_pause": true
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
-<blockquote>
-<p>Example Request Body Parameters</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="s2">"cta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cta-3"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CtaSocial"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"asset_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"share_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"share_title"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"share_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desc"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"share_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://google.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"share_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://google.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"share_button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"share_facebook"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"on_pause"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -3972,19 +3967,17 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h2 id="update-a-cta-social">Update a cta social</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X PUT <span class="se">\</span>
+  -d <span class="s1">'{
+        "cta": {
+          "name": "new name",
+          "position": "outside",
+          "share_button": "share_twitter"
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
-<blockquote>
-<p>Example Request Body Parameters</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="s2">"cta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new name"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outside"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"share_button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"share_twitter"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -4452,25 +4445,23 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h2 id="create-a-cta-tag">Create a cta tag</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -d <span class="s1">'{
+        "cta": {
+          "name": "cta-4",
+          "type": "CtaTag",
+          "asset_id": 1,
+          "left": "30%",
+          "top": "30%",
+          "link": "http://google.com",
+          "title": "title",
+          "icon": "fa-dot-circle-o",
+          "on_pause": true
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
-<blockquote>
-<p>Example Request Body Parameters</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="s2">"cta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cta-4"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CtaTag"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"asset_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"left"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30%"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"top"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30%"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://google.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"title"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fa-dot-circle-o"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"on_pause"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -4715,20 +4706,18 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h2 id="update-a-cta-tag">Update a cta tag</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X PUT <span class="se">\</span>
+  -d <span class="s1">'{
+        "cta": {
+          "name": "new name",
+          "position": "outside",
+          "left": "99%",
+          "button_text": "text"
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
-<blockquote>
-<p>Example Request Body Parameters</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="s2">"cta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new name"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outside"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"left"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99%"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"button_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -5247,26 +5236,24 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h2 id="create-a-cta-purchase">Create a cta purchase</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -d <span class="s1">'{
+        "cta": {
+          "type": "CtaPurchase",
+          "asset_id": 1
+          "on_pause": true,
+          "delivery_method": "none",
+          "price": "9.99",
+          "name": "CtaPurchase 9367",
+          "paypal_integration_id": "6",
+          "product_id": "dsaas",
+          "billing_email": "email@gmail.com",
+          "sender_name": "Kirill"
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
-<blockquote>
-<p>Example Request Body Parameters</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"cta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CtaPurchase"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"asset_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-    </span><span class="s2">"on_pause"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"delivery_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.99"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CtaPurchase 9367"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"paypal_integration_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dsaas"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"billing_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@gmail.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sender_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kirill"</span><span class="p">,</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -5599,20 +5586,18 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h2 id="update-a-cta-purchase">Update a cta purchase</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X PUT <span class="se">\</span>
+  -d <span class="s1">'{
+        "cta": {
+          "price": "18.99",
+          "name": "new_name",
+          "product_id": "new_product_id",
+          "billing_email": "new_mail@gmail.com"
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
-<blockquote>
-<p>Example Request Body Parameters</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"cta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18.99"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_name"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_product_id"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"billing_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_mail@gmail.com"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -6191,37 +6176,35 @@ You must replace <code>test_key</code> with your personal API key.
 </tr>
 </tbody></table>
 
-<!-- /////////////////////////// CREATE CTA BUTTON /////////////////////////// -->
+<!-- /////////////////////////// CREATE CTA SURVEY /////////////////////////// -->
 
 <h2 id="create-a-cta-survey">Create a cta survey</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -d <span class="s1">'{
+        "cta": {
+          "name": "cta-6",
+          "type": "CtaSurvey",
+          "asset_id": 1,
+          "on_pause": true,
+          "survey_questions": [
+            {
+              "text": "question",
+              "survey_options": [
+                {
+                  "text": "answer"
+                },
+                {
+                  "text": "answer"
+                }
+              ]
+            }
+          ]
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
-<blockquote>
-<p>Example Request Body Parameters</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"cta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cta-6"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CtaSurvey"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"asset_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"on_pause"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"survey_questions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"survey_options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -6497,7 +6480,7 @@ You must replace <code>test_key</code> with your personal API key.
 </tr>
 </tbody></table>
 
-<p>Survey questions</p>
+<p>Survey options</p>
 
 <table><thead>
 <tr>
@@ -6525,28 +6508,26 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h2 id="update-a-cta-survey">Update a cta survey</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X PUT <span class="se">\</span>
+  -d <span class="s1">'{
+        "cta": {
+          "name": "new_name",
+          "position": "outside",
+          "survey_questions": [
+            {
+              "text": "new_question",
+              "survey_options": [
+                {
+                  "text": "new_answer"
+                }
+              ]
+            }
+          ]
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
-<blockquote>
-<p>Example Request Body Parameters</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"cta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_name"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outside"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"survey_questions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_question"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"survey_options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_answer"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -7005,25 +6986,23 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h2 id="create-a-cta-html">Create a cta html</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -d <span class="s1">'{
+        "cta": {
+          "name": "cta-7",
+          "type": "CtaHtml",
+          "asset_id": 1,
+          "html": "&lt;div&gt;Htmlcode&lt;/div&gt;",
+          "on_start": true,
+          "left": "30%",
+          "top": "30%",
+          "width": "30%",
+          "height": "30%"
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
-<blockquote>
-<p>Example Request Body Parameters</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"cta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cta-7"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CtaHtml"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"asset_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div&gt;Htmlcode&lt;/div&gt;"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"on_start"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"left"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30%"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"top"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30%"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30%"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30%"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -7210,21 +7189,19 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// UPDATE CTA /////////////////////////// -->
 
 <h2 id="update-a-cta-html">Update a cta html</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/7 <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X PUT <span class="se">\</span>
+  -d <span class="s1">'{
+        "cta": {
+          "name": "new name",
+          "position": "outside",
+          "left": "99%",
+          "width": "50%"
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
-<blockquote>
-<p>Example Request Body Parameters</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"cta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new name"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outside"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"left"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99%"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50%"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -7628,45 +7605,43 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h2 id="create-a-cta-trigger">Create a cta trigger</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -d <span class="s1">'{
+        "cta": {
+          "name": "CtaTrigger 5701",
+          "asset_id": 1,
+          "type": "CtaTrigger",
+          "trigger_cuepoints": [
+            {
+              "id": 1499172736406,
+              "action": "percentage_viewed",
+              "parameter": "equals",
+              "percentage": "10"
+            }
+          ],
+          "trigger_providers": [
+            {
+              "id": 1499172736406,
+              "main_action": "automation",
+              "integration_id": 19,
+              "integration_provider": "aweber",
+              "action": "add_list",
+              "lists": [
+                {
+                  "id": 3847967,
+                  "name": "list_name"
+                }
+              ],
+              "tags_names": [
+                "tag"
+              ]
+            }
+          ]
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
-<blockquote>
-<p>Example Request Body Parameters</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"cta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CtaTrigger 5701"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"asset_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CtaTrigger"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"trigger_cuepoints"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1499172736406</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"percentage_viewed"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"equals"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"percentage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"trigger_providers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1499172736406</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"main_action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"automation"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"integration_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"integration_provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aweber"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"add_list"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"lists"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3847967</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"list_name"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="s2">"tags_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="s2">"tag"</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -7944,33 +7919,30 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h2 id="update-a-cta-trigger">Update a cta trigger</h2>
 <pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
-  -d <span class="nv">api_key</span><span class="o">=</span>test_key
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -X PUT <span class="se">\</span>
+  -d <span class="s1">'{
+        "cta": {
+          "name": "new_name",
+          "trigger_providers": [
+            {
+              "id": 1499172736406б
+              "main_action": "fire_js",
+              "js_code": "console.log(123)"
+            }
+          ],
+          "trigger_cuepoints": [
+            {
+              "id": 1499172736406,
+              "percentage": "40",
+              "parameter": "equals",
+              "action": "percentage_viewed"
+            }
+          ]
+        },
+        "api_key": "your_api_key"
+      }'</span>
 </code></pre>
-<blockquote>
-<p>Example Request Body Parameters</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-
-  </span><span class="s2">"cta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_name"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"trigger_providers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1499172736406</span><span class="err">б</span><span class="w">
-        </span><span class="s2">"main_action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fire_js"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"js_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"console.log(123)"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"trigger_cuepoints"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1499172736406</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"percentage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"equals"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"percentage_viewed"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Example Response</p>
 </blockquote>
