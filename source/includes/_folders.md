@@ -39,8 +39,7 @@ projects_count | integer | Projects count inside the folder
 ## List all folders
 
 ```shell
-curl http://localhost:3500/v1/folders \
-  -d api_key=test_key
+curl http://localhost:3500/v1/folders?api_key=test_key
 ```
 
 > Example Response
@@ -90,8 +89,7 @@ Returns a list of your folders if the call succeeded.
 ## Retrieve a folder
 
 ```shell
-curl http://localhost:3500/v1/folders/2 \
-  -d api_key=test_key
+curl http://localhost:3500/v1/folders/2?api_key=test_key
 ```
 
 > Example Response
@@ -138,8 +136,14 @@ Returns a folder object if the call succeeded. If the folder ID does not exist, 
 
 ```shell
 curl http://localhost:3500/v1/folders \
-  -d api_key=test_key \
-  -d name="Some folder"
+  -H "Content-Type: application/json" \
+  -X POST \
+  -d '{
+        "folder": {
+          "name": "Some folder"
+        },
+        "api_key": "your_api_key"
+      }'
 ```
 
 > Example Response
@@ -178,8 +182,14 @@ Returns a folder object if the call succeeded. If a parent folder id is provided
 
 ```shell
 curl http://localhost:3500/v1/folders/1 \
-  -d api_key=test_key \
-  -d name="New name"
+  -H "Content-Type: application/json" \
+  -X PUT \
+  -d '{
+        "folder": {
+          "name": "New name"
+        },
+        "api_key": "your_api_key"
+      }'
 ```
 
 > Example Response
@@ -218,8 +228,7 @@ Returns the folder object if the update succeeded. Returns an error if update pa
 ## Delete a folder
 
 ```shell
-curl http://localhost:3500/v1/folders/1 \
-  -d api_key=test_key
+curl http://localhost:3500/v1/folders/1?api_key=test_key \
   -X DELETE
 ```
 > Example Response
@@ -228,7 +237,7 @@ curl http://localhost:3500/v1/folders/1 \
 204 NO CONTENT
 ```
 
-This endpoint deletes a specific folder.
+This endpoint deletes a specific folder and all projects inside it.
 
 ### HTTP Request
 

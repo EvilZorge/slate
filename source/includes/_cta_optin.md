@@ -98,26 +98,24 @@ tags | array of hashes| Tags integration field.
 
 ```shell
 curl http://localhost:3500/v1/ctas \
-  -d api_key=test_key
-```
-> Example Request Body Parameters
-
-```json
-{
-  "cta": {
-    "name": "cta-2",
-    "type": "CtaOptin",
-    "asset_id": 1,
-    "integration_id": 42,
-    "on_start": true,
-    "header_text": "header_text",
-    "notification_text": "notification_text",
-    "list": {
-      "id": "id",
-      "name": "destin_owners"
-    }
-  }
-}
+  -H "Content-Type: application/json" \
+  -X POST \
+  -d '{
+        "cta": {
+          "name": "cta-2",
+          "type": "CtaOptin",
+          "asset_id": 1,
+          "integration_id": 42,
+          "on_start": true,
+          "header_text": "header_text",
+          "notification_text": "notification_text",
+          "list": {
+            "id": "id",
+            "name": "destin_owners"
+          }
+        },
+        "api_key": "your_api_key"
+      }'
 ```
 
 > Example Response
@@ -224,18 +222,16 @@ Returns a cta object if the call succeeded. If a cta id is provided and does not
 
 ```shell
 curl http://localhost:3500/v1/ctas/1 \
-  -d api_key=test_key
-```
-> Example Request Body Parameters
-
-```json
-{
-  "cta": {
-    "name": "new name",
-    "position": "outside",
-    "notice_text": "Notice text"
-  }
-}
+  -H "Content-Type: application/json" \
+  -X PUT \
+  -d '{
+        "cta": {
+          "name": "new name",
+          "position": "outside",
+          "notice_text": "Notice text"
+        },
+        "api_key": "your_api_key"
+      }'
 ```
 
 > Example Response

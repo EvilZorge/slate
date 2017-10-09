@@ -35,8 +35,7 @@ Welcome to the OptimizePlayer API!
 > To authorize, add api_key field to query parameters:
 
 ```shell
-curl "api_endpoint_here"
- -d api_key=test_key
+curl "api_endpoint_here?api_key=test_key"
 ```
 
 > Make sure to replace `test_key` with your API key.

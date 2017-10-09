@@ -9,13 +9,13 @@ curl http://localhost:3500/v1/accounts \
   -H "Content-Type: application/json" \
   -X POST \
   -d '{
-      "account": {
-        "name": "user_name",
-        "email": "test@gmail.com"
-      },
-      "plan_remote_id": "test",
-      "api_key": "thirdparty_api_key"
-  }'
+        "account": {
+          "name": "user_name",
+          "email": "test@gmail.com"
+        },
+        "plan_remote_id": "test",
+        "api_key": "thirdparty_api_key"
+      }'
 ```
 
 > Example Response
@@ -57,12 +57,12 @@ curl http://localhost:3500/v1/accounts/test@gmail.com \
   -H "Content-Type: application/json" \
   -X PUT \
   -d '{
-      "account": {
-        "action": "update_plan",
-        "plan_remote_id": "test"
-      },
-      "api_key": "thirdparty_api_key"
-  }'
+        "account": {
+          "action": "update_plan",
+          "plan_remote_id": "test"
+        },
+        "api_key": "thirdparty_api_key"
+      }'
 ```
 
 > Example Response

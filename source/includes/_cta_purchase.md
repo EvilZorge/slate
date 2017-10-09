@@ -104,25 +104,23 @@ title_color | string | Title color.
 
 ```shell
 curl http://localhost:3500/v1/ctas \
-  -d api_key=test_key
-```
-> Example Request Body Parameters
-
-```json
-{
-  "cta": {
-    "type": "CtaPurchase",
-    "asset_id": 1
-    "on_pause": true,
-    "delivery_method": "none",
-    "price": "9.99",
-    "name": "CtaPurchase 9367",
-    "paypal_integration_id": "6",
-    "product_id": "dsaas",
-    "billing_email": "email@gmail.com",
-    "sender_name": "Kirill",
-  }
-}
+  -H "Content-Type: application/json" \
+  -X POST \
+  -d '{
+        "cta": {
+          "type": "CtaPurchase",
+          "asset_id": 1
+          "on_pause": true,
+          "delivery_method": "none",
+          "price": "9.99",
+          "name": "CtaPurchase 9367",
+          "paypal_integration_id": "6",
+          "product_id": "dsaas",
+          "billing_email": "email@gmail.com",
+          "sender_name": "Kirill"
+        },
+        "api_key": "your_api_key"
+      }'
 ```
 
 > Example Response
@@ -234,19 +232,17 @@ Returns a cta object if the call succeeded. If a cta id is provided and does not
 
 ```shell
 curl http://localhost:3500/v1/ctas/1 \
-  -d api_key=test_key
-```
-> Example Request Body Parameters
-
-```json
-{
-  "cta": {
-    "price": "18.99",
-    "name": "new_name",
-    "product_id": "new_product_id",
-    "billing_email": "new_mail@gmail.com"
-  }
-}
+  -H "Content-Type: application/json" \
+  -X PUT \
+  -d '{
+        "cta": {
+          "price": "18.99",
+          "name": "new_name",
+          "product_id": "new_product_id",
+          "billing_email": "new_mail@gmail.com"
+        },
+        "api_key": "your_api_key"
+      }'
 ```
 
 > Example Response

@@ -101,44 +101,42 @@ tags_list | array of hashes | Tags list integration field.
 
 ```shell
 curl http://localhost:3500/v1/ctas \
-  -d api_key=test_key
-```
-> Example Request Body Parameters
-
-```json
-{
-  "cta": {
-    "name": "CtaTrigger 5701",
-    "asset_id": 1,
-    "type": "CtaTrigger",
-    "trigger_cuepoints": [
-      {
-        "id": 1499172736406,
-        "action": "percentage_viewed",
-        "parameter": "equals",
-        "percentage": "10"
-      }
-    ],
-    "trigger_providers": [
-      {
-        "id": 1499172736406,
-        "main_action": "automation",
-        "integration_id": 19,
-        "integration_provider": "aweber",
-        "action": "add_list",
-        "lists": [
-          {
-            "id": 3847967,
-            "name": "list_name"
-          }
-        ],
-        "tags_names": [
-          "tag"
-        ]
-      }
-    ]
-  }
-}
+  -H "Content-Type: application/json" \
+  -X POST \
+  -d '{
+        "cta": {
+          "name": "CtaTrigger 5701",
+          "asset_id": 1,
+          "type": "CtaTrigger",
+          "trigger_cuepoints": [
+            {
+              "id": 1499172736406,
+              "action": "percentage_viewed",
+              "parameter": "equals",
+              "percentage": "10"
+            }
+          ],
+          "trigger_providers": [
+            {
+              "id": 1499172736406,
+              "main_action": "automation",
+              "integration_id": 19,
+              "integration_provider": "aweber",
+              "action": "add_list",
+              "lists": [
+                {
+                  "id": 3847967,
+                  "name": "list_name"
+                }
+              ],
+              "tags_names": [
+                "tag"
+              ]
+            }
+          ]
+        },
+        "api_key": "your_api_key"
+      }'
 ```
 
 > Example Response
@@ -250,32 +248,29 @@ Returns a cta object if the call succeeded. If a cta id is provided and does not
 
 ```shell
 curl http://localhost:3500/v1/ctas/1 \
-  -d api_key=test_key
-```
-> Example Request Body Parameters
-
-```json
-{
-
-  "cta": {
-    "name": "new_name",
-    "trigger_providers": [
-      {
-        "id": 1499172736406б
-        "main_action": "fire_js",
-        "js_code": "console.log(123)"
-      }
-    ],
-    "trigger_cuepoints": [
-      {
-        "id": 1499172736406,
-        "percentage": "40",
-        "parameter": "equals",
-        "action": "percentage_viewed"
-      }
-    ]
-  }
-}
+  -H "Content-Type: application/json" \
+  -X PUT \
+  -d '{
+        "cta": {
+          "name": "new_name",
+          "trigger_providers": [
+            {
+              "id": 1499172736406б
+              "main_action": "fire_js",
+              "js_code": "console.log(123)"
+            }
+          ],
+          "trigger_cuepoints": [
+            {
+              "id": 1499172736406,
+              "percentage": "40",
+              "parameter": "equals",
+              "action": "percentage_viewed"
+            }
+          ]
+        },
+        "api_key": "your_api_key"
+      }'
 ```
 
 > Example Response

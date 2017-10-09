@@ -80,30 +80,28 @@ share_description | string | Description text.
 share_link | string | Share link if share_method is "page".
 share_caption | string | Share caption.
 
-<!-- /////////////////////////// CREATE CTA BUTTON /////////////////////////// -->
+<!-- /////////////////////////// CREATE CTA SOCIAL /////////////////////////// -->
 
 ## Create a cta social
 
 ```shell
 curl http://localhost:3500/v1/ctas \
-  -d api_key=test_key
-```
-> Example Request Body Parameters
-
-```json
-{
- "cta": {
-    "name": "cta-3",
-    "type": "CtaSocial",
-    "asset_id": 1,
-    "share_title": "share_title",
-    "share_description": "desc",
-    "share_link": "http://google.com",
-    "share_image": "http://google.com",
-    "share_button": "share_facebook",
-    "on_pause": true
-  }
-}
+  -H "Content-Type: application/json" \
+  -X POST \
+  -d '{
+        "cta": {
+          "name": "cta-3",
+          "type": "CtaSocial",
+          "asset_id": 1,
+          "share_title": "share_title",
+          "share_description": "desc",
+          "share_link": "http://google.com",
+          "share_image": "http://google.com",
+          "share_button": "share_facebook",
+          "on_pause": true
+        },
+        "api_key": "your_api_key"
+      }'
 ```
 
 > Example Response
@@ -199,18 +197,16 @@ Returns a cta object if the call succeeded. If a cta id is provided and does not
 
 ```shell
 curl http://localhost:3500/v1/ctas/1 \
-  -d api_key=test_key
-```
-> Example Request Body Parameters
-
-```json
-{
- "cta": {
-    "name": "new name",
-    "position": "outside",
-    "share_button": "share_twitter"
-  }
-}
+  -H "Content-Type: application/json" \
+  -X PUT \
+  -d '{
+        "cta": {
+          "name": "new name",
+          "position": "outside",
+          "share_button": "share_twitter"
+        },
+        "api_key": "your_api_key"
+      }'
 ```
 
 > Example Response

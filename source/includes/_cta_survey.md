@@ -99,38 +99,36 @@ Parameter | Type | Description
 --------- | ---- | -----------
 text | string | Answer text
 
-<!-- /////////////////////////// CREATE CTA BUTTON /////////////////////////// -->
+<!-- /////////////////////////// CREATE CTA SURVEY /////////////////////////// -->
 
 ## Create a cta survey
 
 ```shell
 curl http://localhost:3500/v1/ctas \
-  -d api_key=test_key
-```
-> Example Request Body Parameters
-
-```json
-{
-  "cta": {
-    "name": "cta-6",
-    "type": "CtaSurvey",
-    "asset_id": 1,
-    "on_pause": true,
-    "survey_questions": [
-      {
-        "text": "question",
-        "survey_options": [
-          {
-            "text": "answer"
-          },
-          {
-            "text": "answer"
-          }
-        ]
-      }
-    ]
-  },
-}
+  -H "Content-Type: application/json" \
+  -X POST \
+  -d '{
+        "cta": {
+          "name": "cta-6",
+          "type": "CtaSurvey",
+          "asset_id": 1,
+          "on_pause": true,
+          "survey_questions": [
+            {
+              "text": "question",
+              "survey_options": [
+                {
+                  "text": "answer"
+                },
+                {
+                  "text": "answer"
+                }
+              ]
+            }
+          ]
+        },
+        "api_key": "your_api_key"
+      }'
 ```
 
 > Example Response
@@ -229,7 +227,7 @@ Parameter  | Required  | Type    | Default | Description
 text | true | string | | Question text
 survey_options | true | array of hashes | | Survey answers
 
-Survey questions
+Survey options
 
 Parameter  | Required  | Type    | Default | Description
 ---------  | --------- | ------- | ------- | -----------
@@ -244,27 +242,25 @@ Returns a cta object if the call succeeded. If a cta id is provided and does not
 
 ```shell
 curl http://localhost:3500/v1/ctas/1 \
-  -d api_key=test_key
-```
-> Example Request Body Parameters
-
-```json
-{
-  "cta": {
-    "name": "new_name",
-    "position": "outside",
-    "survey_questions": [
-      {
-        "text": "new_question",
-        "survey_options": [
-          {
-            "text": "new_answer"
-          }
-        ]
-      }
-    ]
-  }
-}
+  -H "Content-Type: application/json" \
+  -X PUT \
+  -d '{
+        "cta": {
+          "name": "new_name",
+          "position": "outside",
+          "survey_questions": [
+            {
+              "text": "new_question",
+              "survey_options": [
+                {
+                  "text": "new_answer"
+                }
+              ]
+            }
+          ]
+        },
+        "api_key": "your_api_key"
+      }'
 ```
 
 > Example Response

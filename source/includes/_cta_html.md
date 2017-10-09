@@ -65,24 +65,22 @@ background_opacity | string | Background opacity.
 
 ```shell
 curl http://localhost:3500/v1/ctas \
-  -d api_key=test_key
-```
-> Example Request Body Parameters
-
-```json
-{
-  "cta": {
-    "name": "cta-7",
-    "type": "CtaHtml",
-    "asset_id": 1,
-    "html": "<div>Htmlcode</div>",
-    "on_start": true,
-    "left": "30%",
-    "top": "30%",
-    "width": "30%",
-    "height": "30%"
-  }
-}
+  -H "Content-Type: application/json" \
+  -X POST \
+  -d '{
+        "cta": {
+          "name": "cta-7",
+          "type": "CtaHtml",
+          "asset_id": 1,
+          "html": "<div>Htmlcode</div>",
+          "on_start": true,
+          "left": "30%",
+          "top": "30%",
+          "width": "30%",
+          "height": "30%"
+        },
+        "api_key": "your_api_key"
+      }'
 ```
 
 > Example Response
@@ -156,20 +154,18 @@ Returns a cta object if the call succeeded. If a cta id is provided and does not
 ## Update a cta html
 
 ```shell
-curl http://localhost:3500/v1/ctas/7 \
-  -d api_key=test_key
-```
-> Example Request Body Parameters
-
-```json
-{
-  "cta": {
-    "name": "new name",
-    "position": "outside",
-    "left": "99%",
-    "width": "50%"
-  }
-}
+curl http://localhost:3500/v1/ctas/1 \
+  -H "Content-Type: application/json" \
+  -X PUT \
+  -d '{
+        "cta": {
+          "name": "new name",
+          "position": "outside",
+          "left": "99%",
+          "width": "50%"
+        },
+        "api_key": "your_api_key"
+      }'
 ```
 
 > Example Response

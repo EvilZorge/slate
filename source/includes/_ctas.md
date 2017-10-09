@@ -3,9 +3,7 @@
 ## List all ctas
 
 ```shell
-curl http://localhost:3500/v1/ctas \
-  -d asset_id=1
-  -d api_key=test_key
+curl http://localhost:3500/v1/ctas?api_key=test_key&asset_id=1
 ```
 
 > Example Response
@@ -115,8 +113,7 @@ Returns a list of asset's or project's ctas if the call succeeded.
 ## Retrieve a cta
 
 ```shell
-curl http://localhost:3500/v1/ctas/2 \
-  -d api_key=test_key
+curl http://localhost:3500/v1/ctas/2?api_key=test_key
 ```
 
 > Example Response
@@ -189,8 +186,7 @@ Returns a cta object if the call succeeded. If the cta ID does not exist, this c
 ## Delete a cta
 
 ```shell
-curl http://localhost:3500/v1/ctas/1 \
-  -d api_key=test_key
+curl http://localhost:3500/v1/ctas/1?api_key=test_key \
   -X DELETE
 ```
 > Example Response

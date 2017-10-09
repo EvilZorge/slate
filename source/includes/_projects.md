@@ -7,19 +7,19 @@ curl http://localhost:3500/v1/projects/connect \
   -H "Content-Type: application/json" \
   -X POST \
   -d '{
-      "files": [
-        {
-          "url": "http://techslides.com/demos/sample-videos/small.mp4",
-          "csn_type": "op_hosting"
-        },
-        {
-          "url": "http://techslides.com/demos/sample-videos/small.mp4",
-          "csn_type": "amazons3",
-          "csn_id": 2
-        }
-      ],
-      "api_key": "your_api_key"
-  }'
+        "files": [
+          {
+            "url": "http://techslides.com/demos/sample-videos/small.mp4",
+            "csn_type": "op_hosting"
+          },
+          {
+            "url": "http://techslides.com/demos/sample-videos/small.mp4",
+            "csn_type": "amazons3",
+            "csn_id": 2
+          }
+        ],
+        "api_key": "your_api_key"
+      }'
 ```
 
 > Example Response
@@ -110,7 +110,7 @@ This endpoint upload videos to a project or creates a new one.
 
 ### HTTP Request
 
-`POST http://localhost:3500/v1/projects/connect`
+`POST http://localhost:3500/v1/projects/upload`
 
 ### Request body parameters
 

@@ -160,14 +160,16 @@ Parameter | Type | Description
 endpoint | string | Endpoint.
 api_key | string | Api key(secret key).
 
+### Integration Zapier
+
+No additional fields
 
 <!-- /////////////////////////// INTEGRATIONS /////////////////////////// -->
 
 ## List all integrations
 
 ```shell
-curl http://localhost:3500/v1/integrations \
-  -d api_key=test_key
+curl http://localhost:3500/v1/integrations?api_key=test_key
 ```
 
 > Example Response
@@ -216,8 +218,7 @@ Returns a list of your integrations without secret keys if the call succeeded.
 ## Retrieve a integration
 
 ```shell
-curl http://localhost:3500/v1/integrations/1 \
-  -d api_key=test_key
+curl http://localhost:3500/v1/integrations/1?api_key=test_key
 ```
 
 > Example Response
@@ -237,7 +238,6 @@ curl http://localhost:3500/v1/integrations/1 \
     "publishable_key": "publishable_key"
   }
 }
-
 ```
 
 This endpoint retrieves a specific integration without secret keys.
