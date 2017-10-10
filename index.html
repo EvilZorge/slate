@@ -317,7 +317,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// FOLDERS /////////////////////////// -->
 
 <h2 id="list-all-folders">List all folders</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/folders?api_key<span class="o">=</span>test_key
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/folders?api_key<span class="o">=</span>test_key
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -355,7 +355,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://localhost:3500/v1/folders</code></p>
+<p><code class="prettyprint">GET https://api.optimizeplayer.com/v1/folders</code></p>
 
 <h3 id="returns">Returns</h3>
 
@@ -364,7 +364,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// SPECIFIC FOLDER /////////////////////////// -->
 
 <h2 id="retrieve-a-folder">Retrieve a folder</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/folders/2?api_key<span class="o">=</span>test_key
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/folders/2?api_key<span class="o">=</span>test_key
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -392,7 +392,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://localhost:3500/v1/folders/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://api.optimizeplayer.com/v1/folders/&lt;ID&gt;</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -421,7 +421,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// CREATE FOLDER /////////////////////////// -->
 
 <h2 id="create-a-folder">Create a folder</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/folders <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/folders <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -d <span class="s1">'{
@@ -448,7 +448,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://localhost:3500/v1/folders</code></p>
+<p><code class="prettyprint">POST https://api.optimizeplayer.com/v1/folders</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -484,7 +484,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// UPDATE FOLDER /////////////////////////// -->
 
 <h2 id="update-a-folder">Update a folder</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/folders/1 <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/folders/1 <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X PUT <span class="se">\</span>
   -d <span class="s1">'{
@@ -511,7 +511,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PATCH/PUT http://localhost:3500/v1/folders/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">PATCH/PUT https://api.optimizeplayer.com/v1/folders/&lt;ID&gt;</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -554,7 +554,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// DELETE FOLDER /////////////////////////// -->
 
 <h2 id="delete-a-folder">Delete a folder</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/folders/1?api_key<span class="o">=</span>test_key <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/folders/1?api_key<span class="o">=</span>test_key <span class="se">\</span>
   -X DELETE
 </code></pre>
 <blockquote>
@@ -566,7 +566,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">DELETE http://localhost:3500/v1/folders/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">DELETE https://api.optimizeplayer.com/v1/folders/&lt;ID&gt;</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -595,7 +595,7 @@ You must replace <code>test_key</code> with your personal API key.
           <h1 id="projects">Projects</h1>
 
 <h2 id="connect">Connect</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/projects/connect <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/projects/connect <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -d <span class="s1">'{
@@ -632,7 +632,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://localhost:3500/v1/projects/connect</code></p>
+<p><code class="prettyprint">POST https://api.optimizeplayer.com/v1/projects/connect</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -750,7 +750,7 @@ You must replace <code>test_key</code> with your personal API key.
 <h2 id="upload">Upload</h2>
 
 <p>Max file size is 4GB. Max total size of all files is 20GB.</p>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/projects/upload <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/projects/upload <span class="se">\</span>
   -X POST <span class="se">\</span>
   -F <span class="nv">csn_type</span><span class="o">=</span>op_hosting <span class="se">\</span>
   -F <span class="nv">api_key</span><span class="o">=</span>your_api_key <span class="se">\</span>
@@ -776,7 +776,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://localhost:3500/v1/projects/upload</code></p>
+<p><code class="prettyprint">POST https://api.optimizeplayer.com/v1/projects/upload</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -1329,7 +1329,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// INTEGRATIONS /////////////////////////// -->
 
 <h2 id="list-all-integrations">List all integrations</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/integrations?api_key<span class="o">=</span>test_key
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/integrations?api_key<span class="o">=</span>test_key
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1366,7 +1366,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://localhost:3500/v1/integrations</code></p>
+<p><code class="prettyprint">GET https://api.optimizeplayer.com/v1/integrations</code></p>
 
 <h3 id="returns">Returns</h3>
 
@@ -1375,7 +1375,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// SPECIFIC INTEGRATION /////////////////////////// -->
 
 <h2 id="retrieve-a-integration">Retrieve a integration</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/integrations/1?api_key<span class="o">=</span>test_key
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/integrations/1?api_key<span class="o">=</span>test_key
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1399,7 +1399,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://localhost:3500/v1/integrations/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://api.optimizeplayer.com/v1/integrations/&lt;ID&gt;</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -1430,7 +1430,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// CREATE ACCOUNT /////////////////////////// -->
 
 <h2 id="create-a-account">Create a account</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/accounts <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/accounts <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -d <span class="s1">'{
@@ -1451,7 +1451,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://localhost:3500/v1/accounts</code></p>
+<p><code class="prettyprint">POST https://api.optimizeplayer.com/v1/accounts</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -1521,7 +1521,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// UPDATE ACCOUNT /////////////////////////// -->
 
 <h2 id="update-an-account">Update an account</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/accounts/test@gmail.com <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/accounts/test@gmail.com <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X PUT <span class="se">\</span>
   -d <span class="s1">'{
@@ -1541,7 +1541,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PATCH/PUT http://localhost:3500/v1/accounts/&lt;EMAIL&gt;</code></p>
+<p><code class="prettyprint">PATCH/PUT https://api.optimizeplayer.com/v1/accounts/&lt;EMAIL&gt;</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -1604,7 +1604,7 @@ You must replace <code>test_key</code> with your personal API key.
           <h1 id="ctas">Ctas</h1>
 
 <h2 id="list-all-ctas">List all ctas</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas?api_key<span class="o">=</span>test_key&amp;asset_id<span class="o">=</span>1
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas?api_key<span class="o">=</span>test_key&amp;asset_id<span class="o">=</span>1
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1695,7 +1695,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://localhost:3500/v1/ctas</code></p>
+<p><code class="prettyprint">GET https://api.optimizeplayer.com/v1/ctas</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -1731,7 +1731,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// SPECIFIC CTA /////////////////////////// -->
 
 <h2 id="retrieve-a-cta">Retrieve a cta</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/2?api_key<span class="o">=</span>test_key
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas/2?api_key<span class="o">=</span>test_key
 </code></pre>
 <blockquote>
 <p>Example Response</p>
@@ -1786,7 +1786,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://localhost:3500/v1/ctas/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://api.optimizeplayer.com/v1/ctas/&lt;ID&gt;</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -1815,7 +1815,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// DELETE CTA /////////////////////////// -->
 
 <h2 id="delete-a-cta">Delete a cta</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1?api_key<span class="o">=</span>test_key <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas/1?api_key<span class="o">=</span>test_key <span class="se">\</span>
   -X DELETE
 </code></pre>
 <blockquote>
@@ -1827,7 +1827,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">DELETE http://localhost:3500/v1/ctas/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">DELETE https://api.optimizeplayer.com/v1/ctas/&lt;ID&gt;</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -2063,7 +2063,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// CREATE CTA BUTTON /////////////////////////// -->
 
 <h2 id="create-a-cta-button">Create a cta button</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -d <span class="s1">'{
@@ -2120,7 +2120,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://localhost:3500/v1/ctas</code></p>
+<p><code class="prettyprint">POST https://api.optimizeplayer.com/v1/ctas</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -2328,7 +2328,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// UPDATE CTA /////////////////////////// -->
 
 <h2 id="update-a-cta-button">Update a cta button</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas/1 <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X PUT <span class="se">\</span>
   -d <span class="s1">'{
@@ -2384,7 +2384,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PATCH/PUT http://localhost:3500/v1/ctas/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">PATCH/PUT https://api.optimizeplayer.com/v1/ctas/&lt;ID&gt;</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -2831,7 +2831,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// CREATE CTA OPTIN /////////////////////////// -->
 
 <h2 id="create-a-cta-optin">Create a cta optin</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -d <span class="s1">'{
@@ -2903,7 +2903,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://localhost:3500/v1/ctas</code></p>
+<p><code class="prettyprint">POST https://api.optimizeplayer.com/v1/ctas</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -3154,7 +3154,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// UPDATE CTA /////////////////////////// -->
 
 <h2 id="update-a-cta-optin">Update a cta optin</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas/1 <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X PUT <span class="se">\</span>
   -d <span class="s1">'{
@@ -3218,7 +3218,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PATCH/PUT http://localhost:3500/v1/ctas/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">PATCH/PUT https://api.optimizeplayer.com/v1/ctas/&lt;ID&gt;</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -3681,7 +3681,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// CREATE CTA SOCIAL /////////////////////////// -->
 
 <h2 id="create-a-cta-social">Create a cta social</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -d <span class="s1">'{
@@ -3744,7 +3744,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://localhost:3500/v1/ctas</code></p>
+<p><code class="prettyprint">POST https://api.optimizeplayer.com/v1/ctas</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -3966,7 +3966,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// UPDATE CTA /////////////////////////// -->
 
 <h2 id="update-a-cta-social">Update a cta social</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas/1 <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X PUT <span class="se">\</span>
   -d <span class="s1">'{
@@ -4023,7 +4023,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PATCH/PUT http://localhost:3500/v1/ctas/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">PATCH/PUT https://api.optimizeplayer.com/v1/ctas/&lt;ID&gt;</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -4444,7 +4444,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// CREATE CTA TAG /////////////////////////// -->
 
 <h2 id="create-a-cta-tag">Create a cta tag</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -d <span class="s1">'{
@@ -4504,7 +4504,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://localhost:3500/v1/ctas</code></p>
+<p><code class="prettyprint">POST https://api.optimizeplayer.com/v1/ctas</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -4705,7 +4705,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// UPDATE CTA /////////////////////////// -->
 
 <h2 id="update-a-cta-tag">Update a cta tag</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas/1 <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X PUT <span class="se">\</span>
   -d <span class="s1">'{
@@ -4760,7 +4760,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PATCH/PUT http://localhost:3500/v1/ctas/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">PATCH/PUT https://api.optimizeplayer.com/v1/ctas/&lt;ID&gt;</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -5235,7 +5235,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// CREATE CTA PURCHASE /////////////////////////// -->
 
 <h2 id="create-a-cta-purchase">Create a cta purchase</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -d <span class="s1">'{
@@ -5306,7 +5306,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://localhost:3500/v1/ctas</code></p>
+<p><code class="prettyprint">POST https://api.optimizeplayer.com/v1/ctas</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -5585,7 +5585,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// UPDATE CTA /////////////////////////// -->
 
 <h2 id="update-a-cta-purchase">Update a cta purchase</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas/1 <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X PUT <span class="se">\</span>
   -d <span class="s1">'{
@@ -5650,7 +5650,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PATCH/PUT http://localhost:3500/v1/ctas/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">PATCH/PUT https://api.optimizeplayer.com/v1/ctas/&lt;ID&gt;</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -6179,7 +6179,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// CREATE CTA SURVEY /////////////////////////// -->
 
 <h2 id="create-a-cta-survey">Create a cta survey</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -d <span class="s1">'{
@@ -6259,7 +6259,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://localhost:3500/v1/ctas</code></p>
+<p><code class="prettyprint">POST https://api.optimizeplayer.com/v1/ctas</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -6507,7 +6507,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// UPDATE CTA /////////////////////////// -->
 
 <h2 id="update-a-cta-survey">Update a cta survey</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas/1 <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X PUT <span class="se">\</span>
   -d <span class="s1">'{
@@ -6579,7 +6579,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PATCH/PUT http://localhost:3500/v1/ctas/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">PATCH/PUT https://api.optimizeplayer.com/v1/ctas/&lt;ID&gt;</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -6985,7 +6985,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// CREATE CTA HTML /////////////////////////// -->
 
 <h2 id="create-a-cta-html">Create a cta html</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -d <span class="s1">'{
@@ -7037,7 +7037,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://localhost:3500/v1/ctas</code></p>
+<p><code class="prettyprint">POST https://api.optimizeplayer.com/v1/ctas</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -7189,7 +7189,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// UPDATE CTA /////////////////////////// -->
 
 <h2 id="update-a-cta-html">Update a cta html</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas/1 <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X PUT <span class="se">\</span>
   -d <span class="s1">'{
@@ -7236,7 +7236,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PATCH/PUT http://localhost:3500/v1/ctas/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">PATCH/PUT https://api.optimizeplayer.com/v1/ctas/&lt;ID&gt;</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -7604,7 +7604,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// CREATE CTA Trigger /////////////////////////// -->
 
 <h2 id="create-a-cta-trigger">Create a cta trigger</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X POST <span class="se">\</span>
   -d <span class="s1">'{
@@ -7696,7 +7696,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://localhost:3500/v1/ctas</code></p>
+<p><code class="prettyprint">POST https://api.optimizeplayer.com/v1/ctas</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
@@ -7918,7 +7918,7 @@ You must replace <code>test_key</code> with your personal API key.
 <!-- /////////////////////////// UPDATE CTA /////////////////////////// -->
 
 <h2 id="update-a-cta-trigger">Update a cta trigger</h2>
-<pre class="highlight shell tab-shell"><code>curl http://localhost:3500/v1/ctas/1 <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl https://api.optimizeplayer.com/v1/ctas/1 <span class="se">\</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -X PUT <span class="se">\</span>
   -d <span class="s1">'{
@@ -7990,7 +7990,7 @@ You must replace <code>test_key</code> with your personal API key.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PATCH/PUT http://localhost:3500/v1/ctas/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">PATCH/PUT https://api.optimizeplayer.com/v1/ctas/&lt;ID&gt;</code></p>
 
 <h3 id="request-body-parameters">Request body parameters</h3>
 
