@@ -39,7 +39,7 @@ projects_count | integer | Projects count inside the folder
 ## List all folders
 
 ```shell
-curl http://localhost:3500/v1/folders?api_key=test_key
+curl https://api.optimizeplayer.com/v1/folders?api_key=test_key
 ```
 
 > Example Response
@@ -79,7 +79,7 @@ This endpoint retrieves all folders.
 
 ### HTTP Request
 
-`GET http://localhost:3500/v1/folders`
+`GET https://api.optimizeplayer.com/v1/folders`
 
 ### Returns
 Returns a list of your folders if the call succeeded.
@@ -89,7 +89,7 @@ Returns a list of your folders if the call succeeded.
 ## Retrieve a folder
 
 ```shell
-curl http://localhost:3500/v1/folders/2?api_key=test_key
+curl https://api.optimizeplayer.com/v1/folders/2?api_key=test_key
 ```
 
 > Example Response
@@ -119,7 +119,7 @@ This endpoint retrieves a specific folder.
 
 ### HTTP Request
 
-`GET http://localhost:3500/v1/folders/<ID>`
+`GET https://api.optimizeplayer.com/v1/folders/<ID>`
 
 ### Request body parameters
 
@@ -135,7 +135,7 @@ Returns a folder object if the call succeeded. If the folder ID does not exist, 
 ## Create a folder
 
 ```shell
-curl http://localhost:3500/v1/folders \
+curl https://api.optimizeplayer.com/v1/folders \
   -H "Content-Type: application/json" \
   -X POST \
   -d '{
@@ -164,7 +164,7 @@ This endpoint create a specific folder.
 
 ### HTTP Request
 
-`POST http://localhost:3500/v1/folders`
+`POST https://api.optimizeplayer.com/v1/folders`
 
 ### Request body parameters
 
@@ -181,7 +181,7 @@ Returns a folder object if the call succeeded. If a parent folder id is provided
 ## Update a folder
 
 ```shell
-curl http://localhost:3500/v1/folders/1 \
+curl https://api.optimizeplayer.com/v1/folders/1 \
   -H "Content-Type: application/json" \
   -X PUT \
   -d '{
@@ -210,7 +210,7 @@ This endpoint updates a specific folder.
 
 ### HTTP Request
 
-`PATCH/PUT http://localhost:3500/v1/folders/<ID>`
+`PATCH/PUT https://api.optimizeplayer.com/v1/folders/<ID>`
 
 ### Request body parameters
 
@@ -228,7 +228,7 @@ Returns the folder object if the update succeeded. Returns an error if update pa
 ## Delete a folder
 
 ```shell
-curl http://localhost:3500/v1/folders/1?api_key=test_key \
+curl https://api.optimizeplayer.com/v1/folders/1?api_key=test_key \
   -X DELETE
 ```
 > Example Response
@@ -241,7 +241,7 @@ This endpoint deletes a specific folder and all projects inside it.
 
 ### HTTP Request
 
-`DELETE http://localhost:3500/v1/folders/<ID>`
+`DELETE https://api.optimizeplayer.com/v1/folders/<ID>`
 
 ### Request body parameters
 

@@ -169,7 +169,7 @@ No additional fields
 ## List all integrations
 
 ```shell
-curl http://localhost:3500/v1/integrations?api_key=test_key
+curl https://api.optimizeplayer.com/v1/integrations?api_key=test_key
 ```
 
 > Example Response
@@ -208,7 +208,7 @@ This endpoint retrieves all integrations.
 
 ### HTTP Request
 
-`GET http://localhost:3500/v1/integrations`
+`GET https://api.optimizeplayer.com/v1/integrations`
 
 ### Returns
 Returns a list of your integrations without secret keys if the call succeeded.
@@ -218,7 +218,7 @@ Returns a list of your integrations without secret keys if the call succeeded.
 ## Retrieve a integration
 
 ```shell
-curl http://localhost:3500/v1/integrations/1?api_key=test_key
+curl https://api.optimizeplayer.com/v1/integrations/1?api_key=test_key
 ```
 
 > Example Response
@@ -244,7 +244,7 @@ This endpoint retrieves a specific integration without secret keys.
 
 ### HTTP Request
 
-`GET http://localhost:3500/v1/integrations/<ID>`
+`GET https://api.optimizeplayer.com/v1/integrations/<ID>`
 
 ### Request body parameters
 

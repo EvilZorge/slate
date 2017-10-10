@@ -5,7 +5,7 @@
 ## Create a account
 
 ```shell
-curl http://localhost:3500/v1/accounts \
+curl https://api.optimizeplayer.com/v1/accounts \
   -H "Content-Type: application/json" \
   -X POST \
   -d '{
@@ -28,7 +28,7 @@ This endpoint create a specific account.
 
 ### HTTP Request
 
-`POST http://localhost:3500/v1/accounts`
+`POST https://api.optimizeplayer.com/v1/accounts`
 
 ### Request body parameters
 
@@ -53,7 +53,7 @@ Returns 201 CREATED status code on success.
 ## Update an account
 
 ```shell
-curl http://localhost:3500/v1/accounts/test@gmail.com \
+curl https://api.optimizeplayer.com/v1/accounts/test@gmail.com \
   -H "Content-Type: application/json" \
   -X PUT \
   -d '{
@@ -75,7 +75,7 @@ This endpoint updates a specific account.
 
 ### HTTP Request
 
-`PATCH/PUT http://localhost:3500/v1/accounts/<EMAIL>`
+`PATCH/PUT https://api.optimizeplayer.com/v1/accounts/<EMAIL>`
 
 ### Request body parameters
 

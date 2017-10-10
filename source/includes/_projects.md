@@ -3,7 +3,7 @@
 ## Connect
 
 ```shell
-curl http://localhost:3500/v1/projects/connect \
+curl https://api.optimizeplayer.com/v1/projects/connect \
   -H "Content-Type: application/json" \
   -X POST \
   -d '{
@@ -42,7 +42,7 @@ This endpoint connect videos to a project or creates a new one.
 
 ### HTTP Request
 
-`POST http://localhost:3500/v1/projects/connect`
+`POST https://api.optimizeplayer.com/v1/projects/connect`
 
 ### Request body parameters
 
@@ -82,7 +82,7 @@ Returns a project id and assets ids if the call succeeded.
 Max file size is 4GB. Max total size of all files is 20GB.
 
 ```shell
-curl http://localhost:3500/v1/projects/upload \
+curl https://api.optimizeplayer.com/v1/projects/upload \
   -X POST \
   -F csn_type=op_hosting \
   -F api_key=your_api_key \
@@ -110,7 +110,7 @@ This endpoint upload videos to a project or creates a new one.
 
 ### HTTP Request
 
-`POST http://localhost:3500/v1/projects/upload`
+`POST https://api.optimizeplayer.com/v1/projects/upload`
 
 ### Request body parameters
 

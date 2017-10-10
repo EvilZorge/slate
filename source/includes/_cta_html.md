@@ -64,7 +64,7 @@ background_opacity | string | Background opacity.
 ## Create a cta html
 
 ```shell
-curl http://localhost:3500/v1/ctas \
+curl https://api.optimizeplayer.com/v1/ctas \
   -H "Content-Type: application/json" \
   -X POST \
   -d '{
@@ -118,7 +118,7 @@ This endpoint create a specific cta.
 
 ### HTTP Request
 
-`POST http://localhost:3500/v1/ctas`
+`POST https://api.optimizeplayer.com/v1/ctas`
 
 ### Request body parameters
 
@@ -154,7 +154,7 @@ Returns a cta object if the call succeeded. If a cta id is provided and does not
 ## Update a cta html
 
 ```shell
-curl http://localhost:3500/v1/ctas/1 \
+curl https://api.optimizeplayer.com/v1/ctas/1 \
   -H "Content-Type: application/json" \
   -X PUT \
   -d '{
@@ -203,7 +203,7 @@ This endpoint updates a specific cta.
 
 ### HTTP Request
 
-`PATCH/PUT http://localhost:3500/v1/ctas/<ID>`
+`PATCH/PUT https://api.optimizeplayer.com/v1/ctas/<ID>`
 
 ### Request body parameters
 

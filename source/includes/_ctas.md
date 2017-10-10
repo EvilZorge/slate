@@ -3,7 +3,7 @@
 ## List all ctas
 
 ```shell
-curl http://localhost:3500/v1/ctas?api_key=test_key&asset_id=1
+curl https://api.optimizeplayer.com/v1/ctas?api_key=test_key&asset_id=1
 ```
 
 > Example Response
@@ -96,7 +96,7 @@ This endpoint retrieves all asset's or project's ctas.
 
 ### HTTP Request
 
-`GET http://localhost:3500/v1/ctas`
+`GET https://api.optimizeplayer.com/v1/ctas`
 
 ### Request body parameters
 
@@ -113,7 +113,7 @@ Returns a list of asset's or project's ctas if the call succeeded.
 ## Retrieve a cta
 
 ```shell
-curl http://localhost:3500/v1/ctas/2?api_key=test_key
+curl https://api.optimizeplayer.com/v1/ctas/2?api_key=test_key
 ```
 
 > Example Response
@@ -170,7 +170,7 @@ This endpoint retrieves a specific cta.
 
 ### HTTP Request
 
-`GET http://localhost:3500/v1/ctas/<ID>`
+`GET https://api.optimizeplayer.com/v1/ctas/<ID>`
 
 ### Request body parameters
 
@@ -186,7 +186,7 @@ Returns a cta object if the call succeeded. If the cta ID does not exist, this c
 ## Delete a cta
 
 ```shell
-curl http://localhost:3500/v1/ctas/1?api_key=test_key \
+curl https://api.optimizeplayer.com/v1/ctas/1?api_key=test_key \
   -X DELETE
 ```
 > Example Response
@@ -199,7 +199,7 @@ This endpoint deletes a specific cta.
 
 ### HTTP Request
 
-`DELETE http://localhost:3500/v1/ctas/<ID>`
+`DELETE https://api.optimizeplayer.com/v1/ctas/<ID>`
 
 ### Request body parameters
 
