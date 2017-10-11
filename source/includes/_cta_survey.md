@@ -14,7 +14,7 @@
     "survey_questions": [
       {
         "text": "question",
-        "survey_options": [
+        "survey_answers": [
           {
             "text": "answer"
           },
@@ -91,9 +91,9 @@ Survey questions
 Parameter | Type | Description
 --------- | ---- | -----------
 text | string | Question text
-survey_options | hash | Survey options
+survey_answers | hash | Survey answers
 
-Survey options
+Survey answers
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -116,7 +116,7 @@ curl https://api.optimizeplayer.com/v1/ctas \
           "survey_questions": [
             {
               "text": "question",
-              "survey_options": [
+              "survey_answers": [
                 {
                   "text": "answer"
                 },
@@ -142,12 +142,15 @@ curl https://api.optimizeplayer.com/v1/ctas \
     "text_color": "255,255,255",
     "survey_questions": [
       {
+        "id": "1",
         "text": "question",
-        "survey_options": [
+        "survey_answers": [
           {
+            "id": 1,
             "text": "answer"
           },
           {
+            "id": 2,
             "text": "answer"
           }
         ]
@@ -225,9 +228,9 @@ Survey questions
 Parameter  | Required  | Type    | Default | Description
 ---------  | --------- | ------- | ------- | -----------
 text | true | string | | Question text
-survey_options | true | array of hashes | | Survey answers
+survey_answers | true | array of hashes | | Survey answers
 
-Survey options
+Survey answers
 
 Parameter  | Required  | Type    | Default | Description
 ---------  | --------- | ------- | ------- | -----------
@@ -251,7 +254,7 @@ curl https://api.optimizeplayer.com/v1/ctas/1 \
           "survey_questions": [
             {
               "text": "new_question",
-              "survey_options": [
+              "survey_answers": [
                 {
                   "text": "new_answer"
                 }
@@ -274,9 +277,11 @@ curl https://api.optimizeplayer.com/v1/ctas/1 \
     "text_color": "255,255,255",
     "survey_questions": [
       {
+        "id": 2,
         "text": "new_question",
-        "survey_options": [
+        "survey_answers": [
           {
+            "id": 3,
             "text": "new_answer"
           }
         ]
@@ -354,9 +359,9 @@ Survey questions
 Parameter  | Required  | Type    | Default | Description
 ---------  | --------- | ------- | ------- | -----------
 text | false | string | | Question text
-survey_options | false | array of hashes | | Survey answers
+survey_answers | false | array of hashes | | Survey answers
 
-Survey options
+Survey answers
 
 Parameter  | Required  | Type    | Default | Description
 ---------  | --------- | ------- | ------- | -----------
