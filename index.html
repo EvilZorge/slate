@@ -5942,7 +5942,7 @@ You must replace <code>test_key</code> with your personal API key.
     </span><span class="s2">"survey_questions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"survey_options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"survey_answers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="w">
           </span><span class="p">},</span><span class="w">
@@ -6154,13 +6154,13 @@ You must replace <code>test_key</code> with your personal API key.
 <td>Question text</td>
 </tr>
 <tr>
-<td>survey_options</td>
+<td>survey_answers</td>
 <td>hash</td>
-<td>Survey options</td>
+<td>Survey answers</td>
 </tr>
 </tbody></table>
 
-<p>Survey options</p>
+<p>Survey answers</p>
 
 <table><thead>
 <tr>
@@ -6191,7 +6191,7 @@ You must replace <code>test_key</code> with your personal API key.
           "survey_questions": [
             {
               "text": "question",
-              "survey_options": [
+              "survey_answers": [
                 {
                   "text": "answer"
                 },
@@ -6216,12 +6216,15 @@ You must replace <code>test_key</code> with your personal API key.
     </span><span class="s2">"text_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"255,255,255"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"survey_questions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"survey_options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"survey_answers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
             </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
@@ -6472,7 +6475,7 @@ You must replace <code>test_key</code> with your personal API key.
 <td>Question text</td>
 </tr>
 <tr>
-<td>survey_options</td>
+<td>survey_answers</td>
 <td>true</td>
 <td>array of hashes</td>
 <td></td>
@@ -6480,7 +6483,7 @@ You must replace <code>test_key</code> with your personal API key.
 </tr>
 </tbody></table>
 
-<p>Survey options</p>
+<p>Survey answers</p>
 
 <table><thead>
 <tr>
@@ -6517,7 +6520,7 @@ You must replace <code>test_key</code> with your personal API key.
           "survey_questions": [
             {
               "text": "new_question",
-              "survey_options": [
+              "survey_answers": [
                 {
                   "text": "new_answer"
                 }
@@ -6539,9 +6542,11 @@ You must replace <code>test_key</code> with your personal API key.
     </span><span class="s2">"text_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"255,255,255"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"survey_questions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_question"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"survey_options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"survey_answers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
             </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_answer"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
@@ -6792,7 +6797,7 @@ You must replace <code>test_key</code> with your personal API key.
 <td>Question text</td>
 </tr>
 <tr>
-<td>survey_options</td>
+<td>survey_answers</td>
 <td>false</td>
 <td>array of hashes</td>
 <td></td>
@@ -6800,7 +6805,7 @@ You must replace <code>test_key</code> with your personal API key.
 </tr>
 </tbody></table>
 
-<p>Survey options</p>
+<p>Survey answers</p>
 
 <table><thead>
 <tr>
