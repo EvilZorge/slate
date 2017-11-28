@@ -3472,12 +3472,9 @@ You must replace <code>test_key</code> with your personal API key.
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CtaSocial"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"smart"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"skip"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"share_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"share_title"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"share_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"embed"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"share_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://google.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"share_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://google.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"share_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desc"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"share_caption"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"share_button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"share_facebook"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"position_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
@@ -3652,16 +3649,6 @@ You must replace <code>test_key</code> with your personal API key.
 <td>Buttons link to. Must be &ldquo;page&rdquo; or &ldquo;embed&rdquo;.</td>
 </tr>
 <tr>
-<td>share_title</td>
-<td>string</td>
-<td>Title text.</td>
-</tr>
-<tr>
-<td>share_image</td>
-<td>string</td>
-<td>Image link.</td>
-</tr>
-<tr>
 <td>share_description</td>
 <td>string</td>
 <td>Description text.</td>
@@ -3670,11 +3657,6 @@ You must replace <code>test_key</code> with your personal API key.
 <td>share_link</td>
 <td>string</td>
 <td>Share link if share_method is &ldquo;page&rdquo;.</td>
-</tr>
-<tr>
-<td>share_caption</td>
-<td>string</td>
-<td>Share caption.</td>
 </tr>
 </tbody></table>
 
@@ -3689,10 +3671,8 @@ You must replace <code>test_key</code> with your personal API key.
           "name": "cta-3",
           "type": "CtaSocial",
           "asset_id": 1,
-          "share_title": "share_title",
           "share_description": "desc",
           "share_link": "http://google.com",
-          "share_image": "http://google.com",
           "share_button": "share_facebook",
           "on_pause": true
         },
@@ -3708,12 +3688,9 @@ You must replace <code>test_key</code> with your personal API key.
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CtaSocial"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"smart"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"skip"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"share_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"share_title"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"share_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"embed"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"share_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://google.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"share_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://google.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"share_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desc"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"share_caption"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"share_button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"share_facebook"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"position_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
@@ -3867,20 +3844,6 @@ You must replace <code>test_key</code> with your personal API key.
 <td>Share button. Must be &ldquo;facebook&rdquo; or &ldquo;twitter&rdquo;.</td>
 </tr>
 <tr>
-<td>share_title</td>
-<td>true</td>
-<td>string</td>
-<td></td>
-<td>Title text.</td>
-</tr>
-<tr>
-<td>share_image</td>
-<td>true</td>
-<td>string</td>
-<td></td>
-<td>Image link.</td>
-</tr>
-<tr>
 <td>share_method</td>
 <td>false</td>
 <td>string</td>
@@ -3900,13 +3863,6 @@ You must replace <code>test_key</code> with your personal API key.
 <td>string</td>
 <td></td>
 <td>Share link if share_method is &ldquo;page&rdquo;.</td>
-</tr>
-<tr>
-<td>share_caption</td>
-<td>false</td>
-<td>string</td>
-<td></td>
-<td>Share caption.</td>
 </tr>
 <tr>
 <td>on_pause</td>
@@ -3987,12 +3943,9 @@ You must replace <code>test_key</code> with your personal API key.
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CtaSocial"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"smart"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"skip"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"share_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"share_title"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"share_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"embed"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"share_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://google.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"share_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://google.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"share_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desc"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"share_caption"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"share_button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"share_twitter"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"position_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
@@ -4139,20 +4092,6 @@ You must replace <code>test_key</code> with your personal API key.
 <td>Share button. Must be &ldquo;facebook&rdquo; or &ldquo;twitter&rdquo;.</td>
 </tr>
 <tr>
-<td>share_title</td>
-<td>false</td>
-<td>string</td>
-<td></td>
-<td>Title text.</td>
-</tr>
-<tr>
-<td>share_image</td>
-<td>false</td>
-<td>string</td>
-<td></td>
-<td>Image link.</td>
-</tr>
-<tr>
 <td>share_method</td>
 <td>false</td>
 <td>string</td>
@@ -4172,13 +4111,6 @@ You must replace <code>test_key</code> with your personal API key.
 <td>string</td>
 <td></td>
 <td>Share link if share_method is &ldquo;page&rdquo;.</td>
-</tr>
-<tr>
-<td>share_caption</td>
-<td>false</td>
-<td>string</td>
-<td></td>
-<td>Share caption.</td>
 </tr>
 <tr>
 <td>on_pause</td>
