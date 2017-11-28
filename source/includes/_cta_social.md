@@ -11,12 +11,9 @@
     "type": "CtaSocial",
     "smart": false,
     "skip": true,
-    "share_title": "share_title",
     "share_method": "embed",
     "share_link": "http://google.com",
-    "share_image": "http://google.com",
     "share_description": "desc",
-    "share_caption": null,
     "share_button": "share_facebook",
     "project_id": 1,
     "position_order": 7,
@@ -74,11 +71,8 @@ popup_text_color | string | Popup text color.
 popup_text_opacity | string | Popup text opacity.
 share_button | string | Share button. Must be "facebook" or "twitter".
 share_method | string | Buttons link to. Must be "page" or "embed".
-share_title | string | Title text.
-share_image | string | Image link.
 share_description | string | Description text.
 share_link | string | Share link if share_method is "page".
-share_caption | string | Share caption.
 
 <!-- /////////////////////////// CREATE CTA SOCIAL /////////////////////////// -->
 
@@ -93,10 +87,8 @@ curl https://api.optimizeplayer.com/v1/ctas \
           "name": "cta-3",
           "type": "CtaSocial",
           "asset_id": 1,
-          "share_title": "share_title",
           "share_description": "desc",
           "share_link": "http://google.com",
-          "share_image": "http://google.com",
           "share_button": "share_facebook",
           "on_pause": true
         },
@@ -113,12 +105,9 @@ curl https://api.optimizeplayer.com/v1/ctas \
     "type": "CtaSocial",
     "smart": false,
     "skip": true,
-    "share_title": "share_title",
     "share_method": "embed",
     "share_link": "http://google.com",
-    "share_image": "http://google.com",
     "share_description": "desc",
-    "share_caption": null,
     "share_button": "share_facebook",
     "project_id": 1,
     "position_order": 7,
@@ -173,12 +162,9 @@ button_text | false | string | | Button text.
 popup_text_color | false | string |  255,255,255  | Popup text color. Must be in rgb format. Example: "100, 156, 144".
 popup_text_opacity | false | string |  1  | Popup text opacity. Must be in range (0.0..1.0). Example: "0.5".
 share_button | true | string |     | Share button. Must be "facebook" or "twitter".
-share_title | true | string |     | Title text.
-share_image | true | string |     | Image link.
 share_method | false | string |  embed   | Buttons link to. Must be "page" or "embed".
 share_description | false | string |     | Description text.
 share_link | false | string |     | Share link if share_method is "page".
-share_caption | false | string |     | Share caption.
 on_pause  | false      | boolean  | false | Display cta on pause.
 on_start  | false      | boolean  | false | Display cta on start.
 on_finish | false      | boolean  | false | Display cta on finish.
@@ -218,12 +204,9 @@ curl https://api.optimizeplayer.com/v1/ctas/1 \
     "type": "CtaSocial",
     "smart": false,
     "skip": true,
-    "share_title": "share_title",
     "share_method": "embed",
     "share_link": "http://google.com",
-    "share_image": "http://google.com",
     "share_description": "desc",
-    "share_caption": null,
     "share_button": "share_twitter",
     "project_id": 1,
     "position_order": 7,
@@ -277,12 +260,9 @@ button_text | false | string | | Button text.
 popup_text_color | false | string |  255,255,255  | Popup text color. Must be in rgb format. Example: "100, 156, 144".
 popup_text_opacity | false | string |  1  | Popup text opacity. Must be in range (0.0..1.0). Example: "0.5".
 share_button | false | string |     | Share button. Must be "facebook" or "twitter".
-share_title | false | string |     | Title text.
-share_image | false | string |     | Image link.
 share_method | false | string | embed | Buttons link to. Must be "page" or "embed".
 share_description | false | string |     | Description text.
 share_link | false | string |     | Share link if share_method is "page".
-share_caption | false | string |     | Share caption.
 on_pause  | false      | boolean  | false | Display cta on pause.
 on_start  | false      | boolean  | false | Display cta on start.
 on_finish | false      | boolean  | false | Display cta on finish.
